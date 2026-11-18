@@ -14,8 +14,8 @@ A mobile website for SIT services, academic dates and student events.
 </div>
 
 <div align="center">
-<img src="docs/media/mobile-home.png" alt="OneSIT home with one countdown and favourite service icons" width="280" />
-<img src="docs/media/mobile-coming-soon.png" alt="Coming-soon services with grey icons and status labels" width="280" />
+<img src="docs/media/mobile-home.png" alt="OneSIT home with one countdown and favourite service icons" width="280" height="606" />
+<img src="docs/media/mobile-coming-soon.png" alt="Coming-soon services with grey icons and status labels" width="280" height="606" />
 </div>
 
 - Shortcuts to IN4SIT, xSiTe, RBS, Campus Map, Student intranet, Academic calendar and ReadyTalent, with favourites on Home.
