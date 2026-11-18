@@ -1,0 +1,10 @@
+.git
+.starter
+.shots
+test-results
+playwright-report
+private
+drafts
+assets/brand/concepts
+**/*.msg
+**/*.eml
