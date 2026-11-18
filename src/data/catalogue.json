@@ -13,7 +13,13 @@
         "poster": "/newsletters/whats-happening-2026/01-original.png",
         "preview": "/newsletters/whats-happening-2026/01-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Ticket form",
+            "url": "https://sit.au1.qualtrics.com/jfe/form/SV_9zwMB6AZohpceoe"
+          }
+        ]
       },
       {
         "id": "newsletter-02",
@@ -25,7 +31,13 @@
         "poster": "/newsletters/whats-happening-2026/02-original.jpg",
         "preview": "/newsletters/whats-happening-2026/02-preview.webp",
         "width": 439,
-        "height": 431
+        "height": 431,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://forms.cloud.microsoft/r/W4biQtAc0V"
+          }
+        ]
       },
       {
         "id": "newsletter-03",
@@ -37,7 +49,13 @@
         "poster": "/newsletters/whats-happening-2026/03-original.png",
         "preview": "/newsletters/whats-happening-2026/03-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Volunteer sign-up",
+            "url": "https://forms.cloud.microsoft/r/LWxSd8V9H2"
+          }
+        ]
       },
       {
         "id": "newsletter-04",
@@ -49,7 +67,13 @@
         "poster": "/newsletters/whats-happening-2026/04-original.png",
         "preview": "/newsletters/whats-happening-2026/04-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://forms.cloud.microsoft/r/0nfuedXgd3"
+          }
+        ]
       },
       {
         "id": "newsletter-05",
@@ -61,7 +85,13 @@
         "poster": "/newsletters/whats-happening-2026/05-original.jpg",
         "preview": "/newsletters/whats-happening-2026/05-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://forms.cloud.microsoft/r/FZNZW9rcEt"
+          }
+        ]
       },
       {
         "id": "newsletter-06",
@@ -73,7 +103,13 @@
         "poster": "/newsletters/whats-happening-2026/06-original.png",
         "preview": "/newsletters/whats-happening-2026/06-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Sign-up form",
+            "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fx-ZZNZEjE2c1Hhi6MuUxqWqrxod4K5Lih03cxFqiz9UNlVCMjJVQ0FMV0k4R1haWE1CN1FHSjVQRy4u"
+          }
+        ]
       },
       {
         "id": "newsletter-07",
@@ -85,7 +121,13 @@
         "poster": "/newsletters/whats-happening-2026/07-original.png",
         "preview": "/newsletters/whats-happening-2026/07-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Event updates",
+            "url": "https://www.instagram.com/sitdrrt/"
+          }
+        ]
       },
       {
         "id": "newsletter-08",
@@ -97,7 +139,13 @@
         "poster": "/newsletters/whats-happening-2026/08-original.png",
         "preview": "/newsletters/whats-happening-2026/08-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://docs.google.com/forms/d/e/1FAIpQLSe3YoEV_3Frb44YmyOr4WpnaP0cOleU2w0Kdif98DdhRNlayw/viewform"
+          }
+        ]
       },
       {
         "id": "newsletter-09",
@@ -109,7 +157,13 @@
         "poster": "/newsletters/whats-happening-2026/09-original.jpg",
         "preview": "/newsletters/whats-happening-2026/09-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Submit a photo",
+            "url": "https://www.singaporetech.edu.sg/postcards-from-Punggol-photo-contest-landing"
+          }
+        ]
       },
       {
         "id": "newsletter-10",
@@ -121,7 +175,13 @@
         "poster": "/newsletters/whats-happening-2026/10-original.png",
         "preview": "/newsletters/whats-happening-2026/10-preview.webp",
         "width": 562,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://forms.cloud.microsoft/r/zQMBAXVnPH"
+          }
+        ]
       }
     ]
   },
@@ -139,7 +199,13 @@
         "poster": "/newsletters/whats-happening-2026/11-original.png",
         "preview": "/newsletters/whats-happening-2026/11-preview.webp",
         "width": 720,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Open IN4SIT",
+            "url": "https://in4sit.singaporetech.edu.sg/"
+          }
+        ]
       }
     ]
   },
@@ -157,7 +223,13 @@
         "poster": "/newsletters/whats-happening-2026/12-original.png",
         "preview": "/newsletters/whats-happening-2026/12-preview.webp",
         "width": 509,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Expired survey link",
+            "url": "https://ask.mili.eu/s/0n262vn21nbbiggd?k=gLNWPQU1ahrsdgl1Cv5oEYEPug3p5rXXu3bpFkQJ3z5W3fIrSFdTXpq1upR8rNrr&pl=0nm15fq66rdqbhhm&lang=EN&mkt=SG&uni=sit"
+          }
+        ]
       },
       {
         "id": "newsletter-13",
@@ -169,7 +241,13 @@
         "poster": "/newsletters/whats-happening-2026/13-original.jpg",
         "preview": "/newsletters/whats-happening-2026/13-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Take the survey",
+            "url": "https://go.gov.sg/student-survey-robotics"
+          }
+        ]
       },
       {
         "id": "newsletter-14",
@@ -181,7 +259,13 @@
         "poster": "/newsletters/whats-happening-2026/14-original.jpg",
         "preview": "/newsletters/whats-happening-2026/14-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://go.gov.sg/sff-ne-2026"
+          }
+        ]
       },
       {
         "id": "newsletter-15",
@@ -193,7 +277,17 @@
         "poster": "/newsletters/whats-happening-2026/15-original.png",
         "preview": "/newsletters/whats-happening-2026/15-preview.webp",
         "width": 413,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Registration form",
+            "url": "https://www.cleanandgreenquest2026.com/register"
+          },
+          {
+            "label": "Rules and regulations",
+            "url": "https://go.gov.sg/cqgrr"
+          }
+        ]
       },
       {
         "id": "newsletter-16",
@@ -205,7 +299,13 @@
         "poster": "/newsletters/whats-happening-2026/16-original.jpg",
         "preview": "/newsletters/whats-happening-2026/16-preview.webp",
         "width": 540,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "Sign-up form",
+            "url": "https://go.gov.sg/hdb-hjyp-register"
+          }
+        ]
       },
       {
         "id": "newsletter-17",
@@ -217,7 +317,13 @@
         "poster": "/newsletters/whats-happening-2026/17-original.jpg",
         "preview": "/newsletters/whats-happening-2026/17-preview.webp",
         "width": 576,
-        "height": 720
+        "height": 720,
+        "actions": [
+          {
+            "label": "View workshops",
+            "url": "https://qrs.ly/10DimsWorkshops"
+          }
+        ]
       },
       {
         "id": "newsletter-18",
@@ -229,7 +335,13 @@
         "poster": "/newsletters/whats-happening-2026/18-original.png",
         "preview": "/newsletters/whats-happening-2026/18-preview.webp",
         "width": 720,
-        "height": 703
+        "height": 703,
+        "actions": [
+          {
+            "label": "Information sessions",
+            "url": "https://forms.cloud.microsoft/e/8Fi4P34QfL"
+          }
+        ]
       }
     ]
   },
@@ -247,7 +359,13 @@
         "poster": "/newsletters/whats-happening-2026/19-original.jpg",
         "preview": "/newsletters/whats-happening-2026/19-preview.webp",
         "width": 720,
-        "height": 306
+        "height": 306,
+        "actions": [
+          {
+            "label": "Read the report",
+            "url": "https://www.singaporetech.edu.sg/sustainability-report-2026/"
+          }
+        ]
       }
     ]
   }

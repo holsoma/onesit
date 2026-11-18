@@ -196,6 +196,43 @@ test("newsletter catalogue keeps its sections and opens original posters", async
   await popup.close();
 });
 
+test("catalogue actions retain source URLs and open separately", async ({ page, context }) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto("/events");
+  await expect(page.locator(".catalogue-action")).toHaveCount(20);
+  const entries = await page.locator(".catalogue-entry").evaluateAll(items =>
+    items.map(item => [...item.querySelectorAll<HTMLAnchorElement>(".catalogue-action")].map(link => ({
+      url: link.href,
+      height: link.getBoundingClientRect().height,
+      target: link.target,
+      rel: link.rel,
+    }))),
+  );
+  expect(entries.every(actions => actions.length > 0)).toBe(true);
+  expect(entries.flat().every(action =>
+    action.url.startsWith("https://") && action.height >= 44 &&
+    action.target === "_blank" && action.rel.includes("noopener"),
+  )).toBe(true);
+  await expect(page.getByRole("link", { name: /^Expired survey link:/ })).toHaveCount(1);
+  const link = page.getByRole("link", { name: /^Registration form: Deepfakes/ });
+  const url = (await link.getAttribute("href"))!;
+  expect(url).toMatch(/\/viewform$/);
+  const methods: string[] = [];
+  await context.route(url, route => {
+    methods.push(route.request().method());
+    return route.fulfill({ contentType: "text/html", body: "<h1>Registration destination</h1>" });
+  });
+  await link.focus();
+  const popupPromise = page.waitForEvent("popup");
+  await link.press("Enter");
+  const popup = await popupPromise;
+  await expect(popup).toHaveURL(url);
+  await expect(popup.getByRole("heading")).toHaveText("Registration destination");
+  expect(await popup.evaluate(() => window.opener === null)).toBe(true);
+  expect(methods).toEqual(["GET"]);
+  await popup.close();
+});
+
 test("newsletter uses inert text and exports only reviewed fields", async ({
   page,
 }) => {

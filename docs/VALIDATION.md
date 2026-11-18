@@ -5,10 +5,12 @@ Validated on 18 November 2026 against the production build.
 ## Functional checks
 
 - TypeScript, ESLint, 14 logic tests and the production build pass.
-- All 10 browser tests pass locally, including the supplied private newsletter. CI skips that private-file test. The suite covers phone layouts, services, favourites, academic dates, countdown persistence, catalogue sections, keyboard poster opening and newsletter imports/exports.
+- All 11 browser tests pass locally, including the supplied private newsletter. CI skips that private-file test. The suite covers phone layouts, services, favourites, academic dates, countdown persistence, catalogue sections, keyboard poster opening, external action buttons and newsletter imports/exports.
 - Home and Events each render 19 entries: 10 internal events, one SITeQuest, seven external events and one announcement.
 - All 19 previews decode successfully. All original poster URLs return HTTP 200 with image content types. Originals are not requested until opened.
 - Raw newsletters and local review files remain outside the repository.
+- All 19 items have source action buttons, with 20 links in total. The action test checks HTTPS URLs, 44px touch height, new-tab behaviour and keyboard activation. Its external destination is intercepted locally, so no form is submitted.
+- Ten poster QR codes were decoded and compared with newsletter links. The action URL check returned HTTP 200 for 19 destinations and HTTP 410 for the career survey, whose button is labelled `Expired survey link`. HTTP success does not establish whether a form still accepts responses.
 
 ## Layout and accessibility
 
@@ -24,7 +26,7 @@ The first visual review led to dates appearing before descriptions, a two-column
 
 ## Performance
 
-- Initial JavaScript: 20.3 KiB gzip. CSS: 6.4 KiB gzip.
+- Initial JavaScript: 21.1 KiB gzip. CSS: 6.4 KiB gzip.
 - The newsletter parser remains outside the normal app download.
 - All 19 WebP previews total approximately 1.03 MiB. The first preview loads eagerly with high priority; the others load lazily. Original posters are separate files.
 - A local cold-load check with 4x CPU slowdown, 1.6 Mbps download and 150ms latency measured Home LCP at 1,608ms and Events LCP at 1,780ms. CLS was below 0.001 on Home and zero on Events.

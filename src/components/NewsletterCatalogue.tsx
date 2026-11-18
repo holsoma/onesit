@@ -1,4 +1,5 @@
 import catalogue from "../data/catalogue.json";
+import { Icon } from "./Icon";
 import "./newsletter-catalogue.css";
 
 export function NewsletterCatalogue({ nested = false }: { nested?: boolean }) {
@@ -70,6 +71,21 @@ export function NewsletterCatalogue({ nested = false }: { nested?: boolean }) {
                   </dl>
                 )}
                 <p class="catalogue-summary">{entry.summary}</p>
+                <div class="catalogue-actions">
+                  {entry.actions.map((action) => (
+                    <a
+                      key={action.url}
+                      class="button button-outline catalogue-action"
+                      href={action.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label={`${action.label}: ${entry.title} (opens in a new tab)`}
+                    >
+                      {action.label}
+                      <Icon name="external" />
+                    </a>
+                  ))}
+                </div>
               </article>
             ))}
           </div>

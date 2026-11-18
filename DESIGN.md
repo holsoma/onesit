@@ -67,6 +67,8 @@ Desktop keeps the same reading order. Home and Events share the full newsletter 
 
 The newsletter section links form one compact control, with a pale grey background and white buttons. Use four columns on wide screens and two on phones, with at least 46px touch height. Entry counts appear beside the labels when space permits. Hover and keyboard focus use the red accent. Keep the links free of underlines and avoid adding a second divider below the section title.
 
+Each catalogue item ends with an outlined red action button for its registration or other source link, recovered from the newsletter or poster QR code. Use a destination-specific label and an external-link icon. Buttons are at least 44px high and open in a new tab. Preserve the original poster action separately on the image.
+
 ## Content and assumptions
 
 The owner approved publishing the reviewed 19-entry catalogue and its posters. Home and Events retain the newsletter's section order, including past entries, surveys and the report announcement. The first smaller WebP preview loads eagerly and the remaining previews load lazily. Selecting an image opens the original in a new tab. No separate poster links or reviewer comments appear. Raw email and recipient information remain excluded.

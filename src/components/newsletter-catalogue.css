@@ -96,6 +96,18 @@
   font-size: 15px;
   line-height: 1.65;
 }
+.catalogue-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 20px;
+}
+.catalogue-actions .catalogue-action {
+  border-color: #e8c4ca;
+  color: var(--red);
+  background: var(--surface);
+  text-align: left;
+}
 .catalogue-facts {
   margin: 18px 0 0;
   font-size: 14px;
@@ -115,6 +127,11 @@
   transform: scale(0.98);
 }
 @media (hover: hover) {
+  .catalogue-actions .catalogue-action:hover {
+    border-color: var(--red);
+    background: var(--red);
+    color: white;
+  }
   .catalogue-poster:hover {
     transform: translateY(-3px);
   }
@@ -143,9 +160,13 @@
 }
 @media (prefers-reduced-motion: reduce) {
   .catalogue-poster,
-  .catalogue-sections a { transition: none; }
+  .catalogue-sections a,
+  .catalogue-actions .catalogue-action,
+  .catalogue-actions .catalogue-action svg { transition: none; }
   .catalogue-poster:hover,
   .catalogue-poster:active,
   .catalogue-sections a:hover,
-  .catalogue-sections a:active { transform: none; }
+  .catalogue-sections a:active,
+  .catalogue-actions .catalogue-action:active,
+  .catalogue-actions .catalogue-action:hover svg { transform: none; }
 }
