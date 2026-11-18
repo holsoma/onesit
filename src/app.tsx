@@ -839,13 +839,6 @@ function ComingSoon() {
           </a>
         </div>
       </section>
-      <section class="android-note">
-        <h2>Android, after the web.</h2>
-        <p>
-          OneSIT starts in your browser. A packaged Android app is planned after
-          the website is tested.
-        </p>
-      </section>
     </div>
   );
 }

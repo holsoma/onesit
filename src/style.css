@@ -1149,8 +1149,7 @@ main:focus {
 .roadmap-note > svg {
   color: var(--red);
 }
-.roadmap-note p,
-.android-note p {
+.roadmap-note p {
   color: var(--muted);
   font-size: 14px;
   line-height: 1.75;
@@ -1159,10 +1158,6 @@ main:focus {
 .roadmap-note .text-link {
   color: var(--red);
   margin-top: 10px;
-}
-.android-note {
-  max-width: 650px;
-  margin-top: 30px;
 }
 .about-brand {
   margin-top: 8px;
@@ -1878,8 +1873,7 @@ main:focus {
   .roadmap-note {
     gap: 14px;
   }
-  .roadmap-note p,
-  .android-note p {
+  .roadmap-note p {
     font-size: 14px;
   }
 }

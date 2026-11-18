@@ -2,7 +2,7 @@
 
 ## Brief
 
-A daily campus companion for SIT students. Preact, Vite and TypeScript keep the first download small and the generated files suitable for Android packaging. Use the owner's outlined SVG wordmark without a bottom line in the phone header; retain the other concepts for later selection.
+A daily campus companion for SIT students. Preact, Vite and TypeScript keep the first download small and the generated files suitable for Android packaging. Use the owner's selected outlined SVG wordmark without a bottom line; retain the other concepts for reference.
 
 ## Concepts considered
 
@@ -67,7 +67,7 @@ The first generic draft would be a marketing hero and identical feature cards. R
 
 ## Decisions and assumptions
 
-The main wordmark has no tagline at phone size. The owner has not selected a final large-format tagline. Events are deliberately limited to publicly verifiable summaries. External school pages retain their own loading and login behaviour.
+The owner selected the wordmark without bottom text for all sizes. Events are deliberately limited to publicly verifiable summaries. External school pages retain their own loading and login behaviour.
 
 ## Review changes
 

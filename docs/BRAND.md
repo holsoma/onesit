@@ -10,7 +10,7 @@ The three wordmark concepts keep identical lettering and compare these bottom li
 - SITizen companion
 - No bottom text
 
-The final bottom-line choice is pending. The SVG concepts are in `assets/brand/concepts/`.
+The owner selected **No bottom text**. Use this wordmark throughout the app. The other SVG concepts remain in `assets/brand/concepts/` for reference.
 
 ## Affiliation notice
 
