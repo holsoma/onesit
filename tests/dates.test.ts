@@ -26,6 +26,9 @@ describe("SIT dates", () => {
   });
   it("handles today, ongoing periods and upcoming recess", () => {
     expect(
+      countdowns("2026-11-29").find((c) => c.kind === "assessment")?.status,
+    ).toBe("1 day");
+    expect(
       countdowns("2026-11-18").find((c) => c.kind === "assessment")?.days,
     ).toBe(12);
     expect(
@@ -53,6 +56,25 @@ describe("SIT dates", () => {
   });
 });
 describe("local preferences", () => {
+  it("upgrades existing preferences without losing favourites or dates", () => {
+    const saved = {
+      version: 1,
+      favourites: ["rbs", "map"],
+      dates: { start: "2026-08-31" },
+    };
+    expect(parsePreferences(JSON.stringify(saved))).toEqual({
+      ...saved,
+      countdown: "assessment",
+    });
+    expect(
+      parsePreferences(JSON.stringify({ ...saved, countdown: "recess" }))
+        .countdown,
+    ).toBe("recess");
+    expect(
+      parsePreferences(JSON.stringify({ ...saved, countdown: "unknown" }))
+        .countdown,
+    ).toBe("assessment");
+  });
   it("recovers from broken or future-version data", () => {
     expect(parsePreferences("{bad").favourites).toContain("in4sit");
     expect(parsePreferences('{"version":2}').version).toBe(1);

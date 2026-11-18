@@ -242,162 +242,6 @@ main:focus {
   font-size: 15px;
   margin-top: 10px;
 }
-.page-heading .today-date {
-  font-size: 13px;
-  margin-top: 0;
-  text-align: right;
-}
-.home-grid {
-  display: grid;
-  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 1fr);
-  gap: 34px;
-}
-.home-main,
-.home-aside {
-  min-width: 0;
-}
-.academic-panel {
-  background: var(--surface);
-  padding: 23px 26px;
-  border: 1px solid var(--line);
-  border-radius: 16px;
-}
-.academic-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-}
-.eyebrow {
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  font-weight: 650;
-  color: var(--muted);
-}
-.subtle-button {
-  font-size: 12px;
-  color: var(--muted);
-  display: inline-flex;
-  gap: 6px;
-  align-items: center;
-  min-height: 44px;
-  padding: 4px 0;
-}
-.subtle-button svg {
-  width: 15px;
-  height: 15px;
-}
-.week-display {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 10px;
-  margin: 10px 0 24px;
-}
-.week-label {
-  font-size: 13px;
-  color: var(--muted);
-}
-.week-number {
-  font-size: 32px;
-  letter-spacing: -1.5px;
-  line-height: 1.2;
-  white-space: nowrap;
-}
-.week-number strong {
-  font-size: 76px;
-  letter-spacing: -4.5px;
-  font-weight: 650;
-  color: var(--red);
-  margin-left: 5px;
-  font-variant-numeric: tabular-nums;
-}
-.week-placeholder {
-  display: inline-block;
-  min-width: 84px;
-}
-.week-status {
-  font-size: 12px;
-  white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  padding-bottom: 12px;
-}
-.status-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--red);
-}
-.term-progress {
-  display: flex;
-  gap: 4px;
-  height: 6px;
-}
-.term-progress span {
-  flex: 1;
-  background: #eeecef;
-  border-radius: 1px;
-}
-.term-progress .past-week {
-  background: #d6d3d8;
-}
-.term-progress .current-week {
-  background: var(--red);
-  position: relative;
-}
-.term-progress .current-week:before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: 10px;
-  transform: translateX(-50%);
-  border-left: 3px solid transparent;
-  border-right: 3px solid transparent;
-  border-top: 4px solid var(--red);
-}
-.term-labels {
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 8px;
-}
-.countdown-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  padding: 22px 0 25px;
-}
-.countdown {
-  display: flex;
-  flex-direction: column;
-  padding: 0 14px;
-  border-right: 1px solid var(--line);
-  gap: 3px;
-}
-.countdown:first-child {
-  padding-left: 0;
-}
-.countdown:last-child {
-  border-right: 0;
-  padding-right: 0;
-}
-.countdown-label {
-  font-size: 11px;
-  color: var(--muted);
-  white-space: nowrap;
-}
-.countdown strong {
-  font-size: 22px;
-  font-weight: 650;
-  letter-spacing: -0.7px;
-  line-height: 1.5;
-}
-.countdown-date {
-  font-size: 11px;
-  color: var(--muted);
-}
 .section-heading {
   display: flex;
   justify-content: space-between;
@@ -425,11 +269,6 @@ main:focus {
   width: 16px;
   height: 16px;
   transition: transform 0.16s;
-}
-.favourite-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
 }
 .service-card {
   position: relative;
@@ -533,65 +372,6 @@ main:focus {
   width: 11px;
   height: 11px;
   color: #9b959f;
-}
-.all-services-link {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 52px;
-  font-size: 12px;
-  color: var(--muted);
-  margin-top: 5px;
-}
-.all-services-link > span:last-child {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-}
-.all-services-link svg {
-  width: 15px;
-  height: 15px;
-  transition: transform 0.16s;
-}
-.on-the-way {
-  margin-top: 28px;
-  border-top: 1px solid var(--line);
-  padding-top: 20px;
-}
-.on-the-way .section-heading {
-  margin-bottom: 13px;
-}
-.future-strip {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 10px;
-}
-.future-shortcut {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 8px;
-  text-align: center;
-  color: #69666e;
-}
-.future-shortcut img {
-  filter: grayscale(1);
-  opacity: 0.55;
-  border-radius: 10px;
-}
-.future-shortcut span {
-  font-size: 12px;
-}
-.future-shortcut small {
-  font-size: 10px;
-  color: #69666e;
-  margin-top: -6px;
-}
-.home-aside {
-  padding-top: 4px;
-}
-.happening-section .section-heading {
-  margin-bottom: 0;
 }
 .section-intro {
   font-size: 13px;
@@ -727,9 +507,6 @@ main:focus {
 .event-list-compact .event-details {
   padding-left: 0;
 }
-.happening-section > .button {
-  margin-top: 23px;
-}
 .button {
   min-height: 44px;
   display: inline-flex;
@@ -765,64 +542,6 @@ main:focus {
 }
 .full-width {
   width: 100%;
-}
-.campus-note {
-  display: flex;
-  gap: 14px;
-  align-items: center;
-  padding: 21px 0;
-  margin-top: 28px;
-  border-top: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-}
-.campus-note-icon {
-  width: 38px;
-  height: 38px;
-  display: grid;
-  place-items: center;
-  background: #eeedf1;
-  border-radius: 50%;
-  color: #66616b;
-}
-.campus-note > div {
-  flex: 1;
-}
-.campus-note strong {
-  font-size: 13px;
-  display: block;
-  font-weight: 600;
-}
-.campus-note div > span {
-  display: block;
-  font-size: 11px;
-  color: var(--muted);
-  margin-top: 5px;
-}
-.campus-note > svg {
-  width: 15px;
-  height: 15px;
-  color: var(--muted);
-  transition: transform 0.16s;
-}
-.home-credit {
-  padding: 28px 2px;
-  color: var(--muted);
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-.tiny-wordmark {
-  font-size: 18px;
-  letter-spacing: -0.8px;
-  font-weight: 750;
-  color: var(--ink);
-}
-.tiny-wordmark > span {
-  color: var(--red);
-}
-.home-credit p {
-  font-size: 11px;
-  line-height: 1.7;
 }
 .page-footer {
   display: flex;
@@ -1320,8 +1039,6 @@ main:focus {
     background: var(--red-soft);
   }
   .text-link:hover svg,
-  .all-services-link:hover svg,
-  .campus-note:hover > svg,
   .more-links a:hover > svg:last-child {
     transform: translateX(3px);
   }
@@ -1382,25 +1099,6 @@ main:focus {
     margin-left: 190px;
     padding: 36px 30px 20px;
   }
-  .home-grid {
-    gap: 24px;
-    grid-template-columns: minmax(0, 1.2fr) minmax(260px, 1fr);
-  }
-  .academic-panel {
-    padding: 20px;
-  }
-  .week-number strong {
-    font-size: 66px;
-  }
-  .week-status {
-    font-size: 11px;
-  }
-  .countdown strong {
-    font-size: 20px;
-  }
-  .countdown {
-    padding: 0 10px;
-  }
   .service-compact .service-body {
     gap: 8px;
     padding: 15px 11px;
@@ -1412,40 +1110,10 @@ main:focus {
   .service-compact h3 {
     font-size: 12px;
   }
-  .home-credit {
-    gap: 15px;
-  }
-  .page-heading .today-date {
-    font-size: 12px;
-  }
 }
 @media (max-width: 960px) {
-  .home-grid {
-    grid-template-columns: 1fr;
-  }
-  .home-aside {
-    display: grid;
-    grid-template-columns: 1.5fr 1fr;
-    gap: 24px;
-    align-items: start;
-  }
-  .home-aside .campus-note {
-    margin-top: 50px;
-  }
-  .home-aside .on-the-way {
-    grid-column: 1 / -1;
-  }
-  .home-credit {
-    display: none;
-  }
   .service-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-  .academic-panel {
-    padding: 23px 25px;
-  }
-  .week-number strong {
-    font-size: 76px;
   }
   .service-compact h3 {
     font-size: 14px;
@@ -1458,16 +1126,6 @@ main:focus {
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
-  }
-  .page-heading .today-date {
-    text-align: left;
-  }
-  .countdown-label,
-  .countdown-date {
-    font-size: 12px;
-  }
-  .countdown strong {
-    font-size: 24px;
   }
 }
 @media (max-width: 720px) {
@@ -1560,72 +1218,11 @@ main:focus {
     line-height: 1.6;
     margin-top: 8px;
   }
-  .page-heading .today-date {
-    font-size: 12px;
-    margin-top: 0;
-  }
-  .home-grid {
-    gap: 31px;
-  }
-  .academic-panel {
-    padding: 13px 19px 17px;
-    border-radius: 14px;
-  }
-  .academic-top .subtle-button {
-    font-size: 11px;
-  }
-  .eyebrow {
-    font-size: 11px;
-  }
-  .week-display {
-    margin: 3px 0 21px;
-  }
-  .week-label {
-    font-size: 12px;
-  }
-  .week-number {
-    font-size: 29px;
-  }
-  .week-number strong {
-    font-size: 65px;
-    letter-spacing: -3.5px;
-  }
-  .week-status {
-    padding-bottom: 11px;
-    font-size: 11px;
-  }
-  .term-progress {
-    gap: 3px;
-    height: 5px;
-  }
-  .term-labels {
-    font-size: 10px;
-    margin-top: 7px;
-  }
-  .countdown-grid {
-    padding: 20px 0 24px;
-  }
-  .countdown {
-    padding: 0 11px;
-  }
-  .countdown-label {
-    font-size: 10px;
-  }
-  .countdown strong {
-    font-size: 21px;
-    letter-spacing: -0.6px;
-  }
-  .countdown-date {
-    font-size: 11px;
-  }
   .section-heading {
     margin-bottom: 13px;
   }
   .text-link {
     font-size: 12px;
-  }
-  .favourite-grid {
-    gap: 10px;
   }
   .service-compact .service-body {
     min-height: 85px;
@@ -1648,34 +1245,6 @@ main:focus {
     right: 10px;
     bottom: 10px;
   }
-  .all-services-link {
-    font-size: 11px;
-    margin-top: 3px;
-  }
-  .on-the-way {
-    margin-top: 16px;
-    padding-top: 18px;
-  }
-  .future-strip {
-    gap: 6px;
-  }
-  .future-shortcut span {
-    font-size: 11px;
-  }
-  .future-shortcut small {
-    font-size: 10px;
-  }
-  .future-shortcut img {
-    width: 36px;
-    height: 36px;
-  }
-  .home-aside {
-    display: block;
-    padding-top: 0;
-  }
-  .happening-section .section-intro {
-    font-size: 12px;
-  }
   .event-list-compact .event-summary {
     padding: 21px 0;
   }
@@ -1684,12 +1253,6 @@ main:focus {
   }
   .event-list-compact .event-venue {
     font-size: 12px;
-  }
-  .home-aside .campus-note {
-    margin-top: 27px;
-  }
-  .home-credit {
-    display: none;
   }
   .page-footer {
     margin-top: 30px;
@@ -1882,24 +1445,6 @@ main:focus {
     padding-left: 16px;
     padding-right: 16px;
   }
-  .week-number {
-    font-size: 25px;
-  }
-  .week-number strong {
-    font-size: 58px;
-  }
-  .week-status {
-    font-size: 10px;
-  }
-  .countdown-label {
-    font-size: 10px;
-  }
-  .countdown strong {
-    font-size: 19px;
-  }
-  .countdown {
-    padding: 0 8px;
-  }
   .service-compact .service-body {
     gap: 7px;
     padding: 14px 10px;
@@ -1927,22 +1472,5 @@ main:focus {
   .event-summary:hover .event-date,
   .navigation a:hover {
     transform: none !important;
-  }
-}
-
-.event-all-link {
-  min-width: 44px;
-  justify-content: flex-end;
-}
-.subtle-button svg {
-  transition: transform 0.16s var(--ease);
-}
-@media (hover: hover) {
-  .subtle-button:hover svg {
-    transform: rotate(15deg);
-  }
-  .subtle-button:hover {
-    text-decoration: underline;
-    text-underline-offset: 3px;
   }
 }

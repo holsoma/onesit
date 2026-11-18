@@ -41,7 +41,22 @@ export function EventList({
               <span class="event-heading">
                 <span class="event-category">{event.category}</span>
                 <h3>{event.title}</h3>
-                <span class="event-venue">{event.venue}</span>
+                <span class="event-venue">
+                  {compact ? `${event.category} · ` : ""}
+                  {event.venue}
+                </span>
+                {!compact && (
+                  <span class="event-time">
+                    Starts{" "}
+                    <time dateTime={event.start}>
+                      {formatDay(event.start, {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                      })}{" "}
+                      SGT
+                    </time>
+                  </span>
+                )}
                 {status === "registration-closed" && (
                   <span class="event-status">Registration closed</span>
                 )}

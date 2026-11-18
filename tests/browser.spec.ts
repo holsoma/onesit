@@ -67,10 +67,8 @@ test("dates are calculated in Singapore time and overrides persist", async ({
 }) => {
   await page.clock.install({ time: new Date("2026-11-18T12:00:00+08:00") });
   await page.goto("/");
-  await expect(page.locator(".week-number")).toContainText("12");
-  await expect(
-    page.locator(".countdown").filter({ hasText: "Final assessment" }),
-  ).toContainText("12 days");
+  await expect(page.locator(".dock-week")).toContainText("Week 12");
+  await expect(page.locator(".dock-countdown-value")).toContainText("12 days");
   await page.goto("/more");
   await expect(page.locator("#date-assessment-hint")).toHaveText(
     "In use: 30 Nov 2026 (SIT)",
@@ -81,9 +79,93 @@ test("dates are calculated in Singapore time and overrides persist", async ({
     "In use: 20 Nov 2026 (your dates)",
   );
   await page.goto("/");
+  await expect(page.locator(".dock-countdown-value")).toContainText("2 days");
+});
+test("Campus Dock shows one selectable countdown and remembers the choice", async ({
+  page,
+}) => {
+  await page.clock.install({ time: new Date("2026-11-18T12:00:00+08:00") });
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto("/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText(
+    "Your shortcuts",
+  );
   await expect(
-    page.locator(".countdown").filter({ hasText: "Final assessment" }),
-  ).toContainText("2 days");
+    page.getByRole("heading", { name: "What’s Happening", exact: true }),
+  ).toBeVisible();
+  await expect(page.locator(".dock-countdown")).toHaveCount(1);
+  await expect(page.locator(".dock-countdown-value")).toHaveText("In 12 days");
+  await expect(
+    page.getByRole("link", { name: "RBS Opens in a new tab", exact: true }),
+  ).toBeVisible();
+  await expect(
+    page.getByRole("link", {
+      name: "Campus Map Opens in a new tab",
+      exact: true,
+    }),
+  ).toBeVisible();
+  await page
+    .getByLabel("Choose countdown", { exact: true })
+    .selectOption("break");
+  await expect(page.locator(".dock-countdown-value")).toHaveText("In 19 days");
+  await page.reload();
+  await expect(
+    page.getByLabel("Choose countdown", { exact: true }),
+  ).toHaveValue("break");
+  await expect(page.locator(".dock-countdown-value")).toHaveText("In 19 days");
+  await page
+    .getByLabel("Choose countdown", { exact: true })
+    .selectOption("recess");
+  await expect(page.locator(".dock-countdown-value")).toHaveText("In 89 days");
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+});
+test("Campus Dock handles extra favourites and an empty dock", async ({
+  page,
+}) => {
+  await page.setViewportSize({ width: 320, height: 844 });
+  await page.goto("/services");
+  for (const name of ["Student intranet", "Academic calendar", "ReadyTalent"]) {
+    await page
+      .getByRole("button", { name: `Add ${name} to favourites`, exact: true })
+      .click();
+  }
+  await page
+    .getByRole("navigation")
+    .getByRole("link", { name: "Home", exact: true })
+    .click();
+  await expect(page.locator(".dock-shortcut")).toHaveCount(7);
+  expect(
+    await page.evaluate(
+      () => document.documentElement.scrollWidth <= innerWidth,
+    ),
+  ).toBe(true);
+  await page.goto("/services");
+  for (const name of [
+    "IN4SIT",
+    "xSiTe",
+    "RBS",
+    "Campus Map",
+    "Student intranet",
+    "Academic calendar",
+    "ReadyTalent",
+  ]) {
+    await page
+      .getByRole("button", {
+        name: `Remove ${name} from favourites`,
+        exact: true,
+      })
+      .click();
+  }
+  await page.goto("/");
+  await expect(
+    page.getByRole("link", { name: "Choose your shortcuts" }),
+  ).toBeVisible();
+  await expect(page.locator(".dock-shortcut")).toHaveCount(0);
+  await expect(page.locator(".dock-countdown")).toHaveCount(1);
 });
 test("newsletter uses inert text and exports only reviewed fields", async ({
   page,

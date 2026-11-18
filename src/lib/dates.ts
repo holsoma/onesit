@@ -78,7 +78,7 @@ export function countdowns(day: string, overrides: DateOverrides = {}) {
             ? end && day <= end
               ? "Under way"
               : "Ended"
-            : `${days} days`;
+            : `${days} ${days === 1 ? "day" : "days"}`;
     return { kind, name: countdownNames[kind], target, days, status, custom };
   });
 }

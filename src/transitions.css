@@ -1,18 +1,90 @@
-main { view-transition-name: page-content; }
-.event-month { margin-top: 28px; }
-.month-heading { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 12px; }
-.month-heading h2 { font-size: 15px; font-weight: 600; }
-.month-heading > span { color: var(--muted); font-size: 11px; }
-.month-strip { display: flex; gap: 3px; height: 4px; }
-.month-strip > span { flex: 1; background: #e4e1e7; border-radius: 1px; }
-.month-strip .event-day { background: var(--red); }
-@media(hover:hover) { .text-button:hover { background: #e9e6ed; border-radius: 6px; text-decoration-thickness: 2px; } }
-@media(prefers-reduced-motion:no-preference) {
-  ::view-transition-old(root), ::view-transition-new(root) { animation: none; mix-blend-mode: normal; }
-  ::view-transition-group(page-content) { animation-duration: 160ms; animation-timing-function: var(--ease); }
-  ::view-transition-old(page-content) { animation: 120ms var(--ease) both page-leave; }
-  ::view-transition-new(page-content) { animation: 160ms var(--ease) both page-enter; }
+main {
+  view-transition-name: page-content;
 }
-@keyframes page-leave { to { opacity: 0; transform: translateY(-4px); } }
-@keyframes page-enter { from { opacity: 0; transform: translateY(6px); } }
-@media(prefers-reduced-motion:reduce) { ::view-transition-group(*), ::view-transition-old(*), ::view-transition-new(*) { animation: none!important; } }
+.event-month {
+  margin-top: 28px;
+}
+.month-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+.month-heading h2 {
+  font-size: 15px;
+  font-weight: 600;
+}
+.month-heading > span {
+  color: var(--muted);
+  font-size: 11px;
+}
+.month-strip {
+  display: flex;
+  gap: 3px;
+  height: 4px;
+}
+.month-strip > span {
+  flex: 1;
+  background: #e4e1e7;
+  border-radius: 1px;
+}
+.month-strip .event-day {
+  background: var(--red);
+}
+.month-scale {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 11px;
+}
+.event-time {
+  display: block;
+  margin-top: 5px;
+  color: var(--muted);
+  font-size: 12px;
+}
+@media (hover: hover) {
+  .text-button:hover {
+    background: #e9e6ed;
+    border-radius: 6px;
+    text-decoration-thickness: 2px;
+  }
+}
+@media (prefers-reduced-motion: no-preference) {
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation: none;
+    mix-blend-mode: normal;
+  }
+  ::view-transition-group(page-content) {
+    animation-duration: 160ms;
+    animation-timing-function: var(--ease);
+  }
+  ::view-transition-old(page-content) {
+    animation: 120ms var(--ease) both page-leave;
+  }
+  ::view-transition-new(page-content) {
+    animation: 160ms var(--ease) both page-enter;
+  }
+}
+@keyframes page-leave {
+  to {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+}
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-group(*),
+  ::view-transition-old(*),
+  ::view-transition-new(*) {
+    animation: none !important;
+  }
+}

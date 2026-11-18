@@ -28,7 +28,7 @@ for(let run=1;run<=3;run++){
   await cdp.send('Network.emulateNetworkConditions',{offline:false,latency:150,downloadThroughput:1.6*1024*1024/8,uploadThroughput:750*1024/8});
   await page.addInitScript(()=>{window.metrics={lcp:0,cls:0};new PerformanceObserver(list=>{for(const e of list.getEntries())window.metrics.lcp=e.startTime}).observe({type:'largest-contentful-paint',buffered:true});new PerformanceObserver(list=>{for(const e of list.getEntries())if(!e.hadRecentInput)window.metrics.cls+=e.value}).observe({type:'layout-shift',buffered:true})});
   await page.goto('http://127.0.0.1:4400/');
-  await page.locator('.week-status').filter({hasText:'Study week'}).waitFor();
+  await page.locator('.dock-week').filter({hasText:/Week \d+/}).waitFor();
   await page.waitForTimeout(1000);
   report.coldLoads.push({run,...await page.evaluate(()=>window.metrics)});
   await context.close();

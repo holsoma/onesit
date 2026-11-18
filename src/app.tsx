@@ -1,5 +1,11 @@
 import { createContext } from "preact";
-import { useContext, useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
+import {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "preact/hooks";
 import {
   ErrorBoundary,
   LocationProvider,
@@ -9,6 +15,7 @@ import {
   useLocation,
 } from "preact-iso";
 import { Icon } from "./components/Icon";
+import { CampusDock } from "./components/CampusDock";
 import { useRouteTransition } from "./lib/route-transition";
 import { ServiceCard } from "./components/ServiceCard";
 import { EventList } from "./components/EventList";
@@ -31,6 +38,7 @@ import type { Preferences } from "./lib/preferences";
 import type { CampusEvent } from "./lib/events";
 import type { DateOverrides } from "./lib/dates";
 import "./style.css";
+import "./components/campus-dock.css";
 import "./transitions.css";
 
 const Newsletter = lazy(() => import("./pages/Newsletter"));
@@ -148,7 +156,7 @@ function Shell() {
       <a class="skip-link" href="#main">
         Skip to content
       </a>
-      <div class="app-shell">
+      <div class={`app-shell ${location.path === "/" ? "home-shell" : ""}`}>
         <header class="app-header">
           <a href="/" class="brand-link" aria-label="OneSIT home">
             <img src="/brand/onesit.svg" alt="OneSIT" width="131" height="30" />
@@ -238,232 +246,7 @@ function PageHeading({
   );
 }
 function Home() {
-  const { now, preferences } = useApp();
-  const day = now ? singaporeDay(now) : null;
-  const academic = day ? academicState(day, preferences.dates) : null;
-  const counters = day ? countdowns(day, preferences.dates) : [];
-  const favourites = preferences.favourites
-    .map((id) => services.find((s) => s.id === id)!)
-    .filter(Boolean);
-  const upcoming = events
-    .filter((e) => !now || Date.parse(e.end) >= now.getTime())
-    .slice(0, 3);
-  return (
-    <div class="page home-page">
-      <PageHeading title="Today at SIT">
-        <p class="today-date">
-          {day
-            ? formatDay(day, { weekday: "long", day: "numeric", month: "long" })
-            : "Your daily campus companion"}
-        </p>
-      </PageHeading>
-      <div class="home-grid">
-        <div class="home-main">
-          <section class="academic-panel" aria-labelledby="academic-heading">
-            <div class="academic-top">
-              <span class="eyebrow" id="academic-heading">
-                {academic?.custom
-                  ? "Your academic dates"
-                  : `AY${academic?.term?.year || "2026/27"}`}
-              </span>
-              <a href="/more" class="subtle-button" aria-label="Edit dates">
-                <Icon name="settings" />
-                Edit dates
-              </a>
-            </div>
-            <div class="week-display">
-              <div>
-                <span class="week-label">
-                  {academic?.term
-                    ? `Trimester ${academic.term.number}`
-                    : "Academic week"}
-                </span>
-                <div class="week-number">
-                  Week{" "}
-                  <strong>
-                    {academic?.week || <span class="week-placeholder">..</span>}
-                  </strong>
-                </div>
-              </div>
-              <div class="week-status">
-                <span class="status-dot" />
-                {academic?.period || "Checking today’s date"}
-              </div>
-            </div>
-            <div
-              class="term-progress"
-              role="img"
-              aria-label={
-                academic?.week
-                  ? `Week ${academic.week} of ${academic.term?.number === 1 ? 18 : 17} weeks`
-                  : "Trimester progress"
-              }
-            >
-              {Array.from(
-                {
-                  length:
-                    academic?.term?.number === 1 || !academic?.term ? 18 : 17,
-                },
-                (_, i) => (
-                  <span
-                    class={
-                      academic?.week === i + 1
-                        ? "current-week"
-                        : academic?.week && i + 1 < academic.week
-                          ? "past-week"
-                          : ""
-                    }
-                  />
-                ),
-              )}
-            </div>
-            <div class="term-labels">
-              <span>Trimester starts</span>
-              <span>Trimester break</span>
-            </div>
-          </section>
-          <div class="countdown-grid" aria-label="Academic countdowns">
-            {(["assessment", "break", "recess"] as const).map((kind) => {
-              const counter = counters.find((c) => c.kind === kind);
-              return (
-                <div class="countdown">
-                  <span class="countdown-label">
-                    {kind === "assessment"
-                      ? "Final assessment"
-                      : kind === "break"
-                        ? "Trimester break"
-                        : "Recess week"}
-                  </span>
-                  <strong>{counter?.status || "Checking dates"}</strong>
-                  <span class="countdown-date">
-                    {counter?.target
-                      ? formatDay(counter.target)
-                      : "Published SIT calendar"}
-                    {counter?.custom ? " · Your date" : ""}
-                  </span>
-                </div>
-              );
-            })}
-          </div>
-          <section
-            class="favourites-section"
-            aria-labelledby="favourites-heading"
-          >
-            <div class="section-heading">
-              <h2 id="favourites-heading">
-                <Icon name="star" />
-                Your favourites
-              </h2>
-              <a class="text-link" href="/services">
-                Edit <Icon name="arrow" />
-              </a>
-            </div>
-            {favourites.length ? (
-              <div class="favourite-grid">
-                {favourites.map((service) => (
-                  <ServiceCard key={service.id} service={service} compact />
-                ))}
-              </div>
-            ) : (
-              <div class="empty-state">
-                <p>Keep your everyday services close.</p>
-                <a class="text-link" href="/services">
-                  Choose your favourites <Icon name="arrow" />
-                </a>
-              </div>
-            )}
-            <a class="all-services-link" href="/services">
-              <span>Explore all services</span>
-              <span>
-                {services.filter((s) => s.status === "available").length}{" "}
-                available <Icon name="arrow" />
-              </span>
-            </a>
-          </section>
-        </div>
-        <aside class="home-aside">
-          <section
-            class="happening-section"
-            aria-labelledby="happening-heading"
-          >
-            <div class="section-heading">
-              <h2 id="happening-heading">What’s happening</h2>
-              <a
-                class="text-link event-all-link"
-                href="/events"
-                aria-label="View all events"
-              >
-                <Icon name="arrow" />
-              </a>
-            </div>
-            <p class="section-intro">A few things to put on your radar.</p>
-            <EventList events={upcoming} now={now} compact />
-            <a href="/events" class="button button-outline full-width">
-              Browse events <Icon name="arrow" />
-            </a>
-          </section>
-          <a
-            class="campus-note"
-            href="https://www.singaporetech.edu.sg/campus-wayfinder"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="campus-note-icon">
-              <Icon name="pin" />
-            </span>
-            <div>
-              <strong>New route to class?</strong>
-              <span>Open the Punggol campus map.</span>
-            </div>
-            <Icon name="external" />
-          </a>
-          <section class="on-the-way" aria-labelledby="on-the-way-heading">
-            <div class="section-heading">
-              <h2 id="on-the-way-heading">On the way</h2>
-              <a class="text-link" href="/coming-soon">
-                View all <Icon name="arrow" />
-              </a>
-            </div>
-            <div class="future-strip">
-              {services
-                .filter((s) =>
-                  ["cates", "transport", "medihub", "facilities"].includes(
-                    s.id,
-                  ),
-                )
-                .map((s) => (
-                  <div class="future-shortcut">
-                    <img
-                      src={`/services/${s.icon}.svg`}
-                      alt=""
-                      width="40"
-                      height="40"
-                    />
-                    <span>
-                      {s.id === "transport"
-                        ? "Transport"
-                        : s.id === "facilities"
-                          ? "Facilities"
-                          : s.name}
-                    </span>
-                    <small>Coming soon</small>
-                  </div>
-                ))}
-            </div>
-          </section>
-          <div class="home-credit">
-            <span class="tiny-wordmark">
-              One<span>SIT</span>
-            </span>
-            <p>
-              A little less searching.
-              <br />A little more campus life.
-            </p>
-          </div>
-        </aside>
-      </div>
-    </div>
-  );
+  return <CampusDock {...useApp()} />;
 }
 function Services() {
   const { preferences, update, announce } = useApp();
@@ -578,7 +361,7 @@ function Events() {
   return (
     <div class="page narrow-page">
       <PageHeading
-        title="What’s happening"
+        title="What’s Happening"
         description="Events worth stepping out for."
       />
       <div class="events-toolbar">
@@ -632,6 +415,10 @@ function Events() {
                 {Array.from({ length: days }, (_, i) => (
                   <span class={eventDays.has(i + 1) ? "event-day" : ""} />
                 ))}
+              </div>
+              <div class="month-scale" aria-hidden="true">
+                <span>{formatDay(month + "-01")}</span>
+                <span>{formatDay(month + "-" + days)}</span>
               </div>
               <EventList events={monthEvents} now={now} />
             </section>
@@ -750,8 +537,9 @@ function More() {
       <section class="settings-panel" aria-labelledby="local-settings">
         <h2 id="local-settings">Saved on this device</h2>
         <p>
-          Your favourites and dates stay in this browser. Clearing browser data
-          removes them. There is no account or cross-device sync.
+          Your favourites, countdown choice and dates stay in this browser.
+          Clearing browser data removes them. There is no account or
+          cross-device sync.
         </p>
         {storageWarning && (
           <p class="error-message" role="alert">
@@ -761,7 +549,7 @@ function More() {
         )}
         {resetting ? (
           <div class="reset-confirm">
-            <p>Reset favourites and personal dates?</p>
+            <p>Reset favourites, countdown choice and personal dates?</p>
             <button
               class="button button-outline"
               onClick={() => {

@@ -1,0 +1,373 @@
+.home-shell {
+  background: var(--surface);
+  min-height: 100vh;
+}
+.home-page {
+  max-width: 1080px;
+  padding-top: 4px;
+}
+.dock-layout,
+.dock-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: clamp(30px, 4vw, 64px);
+  align-items: start;
+}
+.dock-overview {
+  align-items: center;
+  margin-bottom: 28px;
+}
+.dock-primary,
+.dock-secondary {
+  min-width: 0;
+}
+.dock-context {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  color: var(--muted);
+  font-size: 13px;
+}
+.dock-week {
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 44px;
+  color: var(--ink);
+  white-space: nowrap;
+  font-size: 13px;
+  font-weight: 600;
+}
+.dock-week > span {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--red);
+  transition: transform 160ms var(--ease);
+}
+.dock-countdown {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  background: var(--red-soft);
+  padding: 10px 18px 14px;
+  border-radius: 12px;
+  margin-top: 0;
+  min-height: 85px;
+}
+.dock-countdown-copy {
+  min-width: 0;
+  flex: 1;
+}
+.dock-countdown-picker {
+  position: relative;
+  max-width: 225px;
+}
+.dock-countdown-picker select {
+  display: block;
+  width: 100%;
+  min-height: 44px;
+  padding: 0 24px 0 0;
+  border: 0;
+  background: transparent;
+  appearance: none;
+  color: var(--ink);
+  font-size: 16px;
+  font-weight: 550;
+  cursor: pointer;
+}
+.dock-countdown-picker > svg {
+  position: absolute;
+  top: 15px;
+  right: 2px;
+  width: 14px;
+  height: 14px;
+  transform: rotate(90deg);
+  pointer-events: none;
+  transition: transform 160ms var(--ease);
+}
+.dock-countdown-date {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+.dock-countdown-value {
+  font-size: 17px;
+  font-weight: 650;
+  color: var(--red);
+  letter-spacing: -0.4px;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  max-width: 110px;
+  flex-shrink: 0;
+}
+.dock-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-bottom: 18px;
+}
+.dock-section-heading h1 {
+  font-size: 27px;
+  letter-spacing: -0.8px;
+}
+.dock-section-heading h2 {
+  font-size: 19px;
+}
+.dock-section-heading .text-link {
+  color: var(--muted);
+  font-size: 12px;
+  white-space: nowrap;
+}
+.dock-favourites {
+  margin-top: 0;
+}
+.dock-shortcuts {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px 12px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.dock-shortcut {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  min-height: 98px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 550;
+  line-height: 1.45;
+}
+.dock-shortcut > img {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  transition: transform 160ms var(--ease);
+}
+.dock-shortcut:active > img {
+  transform: scale(0.94);
+}
+.dock-all-services {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  min-height: 55px;
+  padding: 8px 0 14px;
+  border-bottom: 1px solid var(--line);
+  font-size: 13px;
+  margin-top: 6px;
+}
+.dock-service-count {
+  display: inline-flex;
+  align-items: center;
+  gap: 22px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.dock-service-count svg {
+  width: 17px;
+  height: 17px;
+  color: var(--ink);
+  transition: transform 160ms var(--ease);
+}
+.dock-secondary {
+  padding-top: 0;
+}
+.dock-events .event-summary {
+  padding: 21px 0;
+  gap: 16px;
+}
+.dock-events .event-date {
+  width: 36px;
+  height: auto;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  align-self: start;
+  padding: 3px 0 0;
+}
+.dock-events .event-date strong {
+  font-size: 25px;
+  letter-spacing: -0.7px;
+}
+.dock-events .event-date > span {
+  font-size: 11px;
+  margin-top: 5px;
+}
+.dock-events .event-category {
+  display: none;
+}
+.dock-events .event-heading h3 {
+  font-size: 15px;
+  letter-spacing: -0.2px;
+}
+.dock-events .event-venue {
+  font-size: 12px;
+  margin-top: 6px;
+  line-height: 1.65;
+}
+.dock-events .event-details {
+  padding-left: 52px;
+}
+.dock-coming-soon {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 54px;
+  margin-top: 20px;
+  color: var(--muted);
+  font-size: 12px;
+}
+.dock-future-icons {
+  display: flex;
+  gap: 8px;
+  flex-shrink: 0;
+}
+.dock-future-icons img {
+  filter: grayscale(1);
+  opacity: 0.5;
+  transition:
+    transform 160ms var(--ease),
+    opacity 160ms;
+}
+@media (hover: hover) {
+  .dock-week:hover > span {
+    transform: scale(1.5);
+  }
+  .dock-week:hover {
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .dock-countdown-picker:hover > svg {
+    transform: translateY(2px) rotate(90deg);
+  }
+  .dock-shortcut:hover > img {
+    transform: translateY(-3px);
+  }
+  .dock-all-services:hover svg {
+    transform: translateX(3px);
+  }
+  .dock-coming-soon:hover img {
+    transform: translateY(-2px);
+    opacity: 0.7;
+  }
+}
+@media (max-width: 1100px) {
+  .dock-layout,
+  .dock-overview {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .dock-overview {
+    gap: 12px;
+  }
+  .home-page {
+    max-width: 650px;
+  }
+}
+@media (max-width: 720px) {
+  .home-shell .app-header {
+    border-bottom: 0;
+  }
+  .home-shell .app-content {
+    padding-top: 5px;
+  }
+  .home-page {
+    max-width: 500px;
+  }
+  .dock-context,
+  .dock-week {
+    font-size: 12px;
+  }
+  .dock-countdown {
+    padding: 7px 15px 12px;
+    gap: 10px;
+    margin-top: 12px;
+    min-height: 78px;
+  }
+  .dock-countdown-value {
+    font-size: 15px;
+    max-width: 92px;
+  }
+  .dock-countdown-date {
+    font-size: 11px;
+  }
+  .dock-favourites {
+    margin-top: 0;
+  }
+  .dock-overview {
+    display: block;
+    margin-bottom: 25px;
+  }
+  .dock-section-heading h1 {
+    font-size: 24px;
+    letter-spacing: -0.7px;
+  }
+  .dock-section-heading h2 {
+    font-size: 18px;
+  }
+  .dock-section-heading {
+    margin-bottom: 15px;
+  }
+  .dock-shortcuts {
+    gap: 16px 8px;
+  }
+  .dock-shortcut {
+    font-size: 12px;
+  }
+  .dock-all-services {
+    font-size: 12px;
+  }
+  .dock-events .event-details {
+    padding-left: 0;
+  }
+  .dock-events .event-summary {
+    padding: 19px 0;
+  }
+}
+@media (max-width: 359px) {
+  .dock-countdown {
+    padding-left: 12px;
+    padding-right: 12px;
+    gap: 7px;
+  }
+  .dock-countdown-value {
+    font-size: 14px;
+    max-width: 80px;
+  }
+  .dock-shortcuts {
+    gap: 16px 6px;
+  }
+  .dock-shortcut > img {
+    width: 51px;
+    height: 51px;
+    border-radius: 14px;
+  }
+  .dock-future-icons {
+    gap: 5px;
+  }
+  .dock-future-icons img {
+    width: 23px;
+    height: 23px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .dock-week:hover > span,
+  .dock-shortcut:hover > img,
+  .dock-shortcut:active > img,
+  .dock-all-services:hover svg,
+  .dock-coming-soon:hover img {
+    transform: none;
+  }
+}

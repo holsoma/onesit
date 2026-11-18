@@ -20,15 +20,15 @@ Campus services, academic dates and student events, made for your phone.
 </div>
 
 <div align="center">
-<img src="docs/media/mobile-home.png" alt="OneSIT home on a phone, showing the academic week and favourite services" width="280" />
+<img src="docs/media/mobile-home.png" alt="OneSIT Campus Dock on a phone, showing one countdown and favourite service icons" width="280" />
 <img src="docs/media/mobile-coming-soon.png" alt="Coming-soon services remain visible with grey icons and status labels" width="280" />
 </div>
 
 ## Features
 
-- **Keep your services close.** Open IN4SIT, xSiTe, room booking, Campus Wayfinder, the Student Intranet, the academic calendar and ReadyTalent. Star the links you use most.
-- **Know your academic week.** Follow the published SIT calendar, see countdowns to assessments and breaks, and set your own dates when your schedule differs.
-- **See what is happening.** Browse reviewed event summaries, dates, locations and public organiser links.
+- **Keep your services close.** Open IN4SIT, xSiTe, RBS, Campus Map, the Student Intranet, the academic calendar and ReadyTalent. Star the links you use most.
+- **Know your academic week.** A compact week label and one selectable countdown follow the published SIT calendar. Choose Final assessment, Trimester break or Recess week; the choice stays in this browser. Set your own dates when your schedule differs.
+- **See What’s Happening.** Browse reviewed event summaries, dates, locations and public organiser links.
 - **Use it without an account.** Favourites and personal dates stay in this browser. School services handle their own sign-in.
 - **See what is next.** Future services remain in the catalogue with grey icons and clear Coming soon labels.
 

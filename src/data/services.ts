@@ -30,7 +30,7 @@ export const services: Service[] = [
   },
   {
     id: "rbs",
-    name: "Room booking",
+    name: "RBS",
     description: "Book a campus space",
     category: "Campus",
     status: "available",
@@ -39,7 +39,7 @@ export const services: Service[] = [
   },
   {
     id: "map",
-    name: "Campus map",
+    name: "Campus Map",
     description: "Find your way around",
     category: "Campus",
     status: "available",

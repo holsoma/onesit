@@ -8,14 +8,14 @@ export const site = {
 };
 export const pageMeta: Record<string, { title: string; description: string }> =
   {
-    "/": { title: "Today at SIT", description: site.description },
+    "/": { title: "Your campus companion", description: site.description },
     "/services": {
       title: "Services",
       description:
         "Find SIT services, pin your favourites and see what is coming to OneSIT.",
     },
     "/events": {
-      title: "What’s happening",
+      title: "What’s Happening",
       description:
         "Reviewed events and activities for the SIT community, with dates and source links.",
     },

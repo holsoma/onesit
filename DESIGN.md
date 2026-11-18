@@ -2,75 +2,72 @@
 
 ## Brief
 
-A daily campus companion for SIT students. Preact, Vite and TypeScript keep the first download small and the generated files suitable for Android packaging. Use the owner's selected outlined SVG wordmark without a bottom line; retain the other concepts for reference.
+OneSIT is a mobile campus companion. The owner selected Campus Dock: compact academic context, one selectable countdown, favourite service icons and What’s Happening. Remove the large week number and Today at SIT heading. Use RBS and Campus Map as service labels. Use the selected wordmark without bottom text.
+
+Keep Preact, Vite and TypeScript. Static pages, local assets and system fonts keep loading quick. No login, calendar integration, server or additional animation library.
 
 ## Concepts considered
 
-| Concept               | Anchor and composition                                                                | Signature and feeling                                            | Screenshot                                                   | Originality / fit / feasibility / portability |
-| --------------------- | ------------------------------------------------------------------------------------- | ---------------------------------------------------------------- | ------------------------------------------------------------ | --------------------------------------------- |
-| Campus day board      | SIT's academic week and scattered school portals become a personal campus noticeboard | A star pins a service into the personal board; direct and useful | Current trimester strip, favourite services and dated events | 4 / 5 / 5 / 2                                 |
-| Punggol connections   | The new campus and its linked buildings organise services like a route map            | A selected path joins services; exploratory                      | A transport-like map of campus tasks                         | 4 / 3 / 3 / 2                                 |
-| One typographic index | OneSIT's name becomes a strict single-column catalogue                                | Entries slide into alignment; orderly                            | An oversized index of school links                           | 3 / 4 / 5 / 4                                 |
+| Concept | Anchor | Composition and interaction | Originality / fit / feasibility / portability |
+| --- | --- | --- | --- |
+| Campus Dock | OneSIT brings separate school services together | A familiar row of favourite app icons, compact dates and one countdown | 3 / 5 / 5 / 3 |
+| Campus Wayfinder | Navigating Punggol and separate online services | Search and aligned destination rows with a red location marker | 4 / 4 / 5 / 2 |
+| Campus Bulletin | What’s Happening newsletter and student-led origin | One real event headline leads a short campus bulletin | 4 / 4 / 5 / 2 |
 
-Choose Campus day board: the academic rhythm and shortcuts are the actual daily task, with no decorative journey between them.
+The owner chose Campus Dock for quick daily service access.
 
 ## Concept card
 
-Idea: A student's campus day, gathered on one personal board.
-Metaphor: A campus noticeboard with pinned shortcuts and a week marker.
-Signature: Favourite stars fill on press and immediately update the home shortcuts; a segmented trimester strip locates today.
-Emotion: Recognise the week and find the next action within three seconds.
-Motion verb: Settle into place.
-Screenshot: A compact red week marker, four favourite services and upcoming event dates.
+Idea: Bring the school's separate tools into one compact app dock.
+Metaphor: A phone's favourite-app area.
+Signature: Favourite icons sit in a stable dock and lift slightly on interaction.
+Emotion: Ready to use.
+Motion verb: Slot into place.
+Screenshot: Small week label, one countdown, four service icons and dated events.
 
 ## System
 
-- Ground: #F7F7F8. Surface: #FFFFFF. Ink: #242327. Muted: #69666E. Line: #E7E5E9. Accent: #C72535. Logo red remains #F0323C.
-- System sans typography, with no font requests. Body 16px / 1.5, labels 12 to 14px, headings 26 to 38px with negative tracking, tabular academic numbers.
-- Desktop: 220px navigation rail, content maximum 1160px, 32px gutters. Home content uses a 7:5 split. Phone: one content column, 20px gutters, two-column service grid, four-item bottom navigation with safe-area padding.
-- Shapes: 16px main panel corners, 12px shortcuts and controls, circular star targets. Borders are quiet; shadows only mark the fixed mobile navigation.
-- Motion: 140 to 180ms ease-out transform/colour changes, active press at scale .97. Still at rest. No loaders or scroll effects. Native scrolling is deliberate.
-- Low latency takes precedence over the skill's default GSAP, Lenis and WebGL stack. These dependencies and their continuous clocks are omitted. CSS feedback is enough for this product.
-- No remote favicons at runtime. Store icons locally. Future services are grey but retain readable labels and Coming soon badges. Original category icons are used where an official asset is unavailable, with no suggestion of an official logo.
+- Home surface: #FFFFFF. Other pages: #F7F7F8. Ink: #242327. Secondary text: #69666E. Lines: #E7E5E9. Accent: #C72535. Soft accent: #FBECEF. Wordmark red: #F0323C.
+- System sans typography. On phones: 24px shortcut heading, 18px section headings, 12px week label, 15px countdown value. Native select text stays 16px to avoid automatic zoom on mobile browsers.
+- Phone gutters: 20px, reducing to 16px at 320px. Four shortcuts per row, wrapping when more are saved. Keep the bottom navigation and safe-area padding.
+- Desktop: existing navigation rail. Academic context sits above aligned shortcut and event columns. At 1100px and below, use one column with a capped reading width.
+- Main controls use 12px corners. Shortcut icons use 16px corners. Avoid framing every service in a separate card on Home.
+- Only one countdown is visible. The native selector offers Final assessment, Trimester break and Recess week. Persist the choice with favourites and personal dates; older saved preferences remain valid.
+- Still at rest. Use 160ms press, lift and directional feedback. Native page transitions remain available and respect reduced motion.
+- Low latency takes precedence over the skill's default GSAP, Lenis and WebGL stack. No continuous animation, loader or scroll effect.
+- Store service icons locally. Available services keep the same icon colours on Home and in Services. Reserve grey icons for coming-soon services, with readable labels and explicit status text in the directory.
 
 ## Composition
 
+Phone:
+
 ```text
-Phone home                    Desktop home
-OneSIT       settings         rail | Today at SIT        date
-Today at SIT / date                 | week panel | Events
-week + period + term strip          | countdowns | dated rows
-three compact countdowns            | favourites | campus link
-Favourites       Edit               | available shortcuts
-shortcut  shortcut
-shortcut  shortcut
-What's happening  View all
-dated event rows
-Not affiliated with SIT.
-Home Services Events More
+OneSIT                         settings
+Wednesday, 18 November          Week 12
+[Final assessment v          In 12 days]
+[30 Nov                              ]
 
-Services                      Events
-heading / search              heading / upcoming + past
-category filters              month label
-available and future tiles    date | title | venue
-grey icons + explicit status  expandable detail / source
+Your shortcuts                     Edit
+IN4SIT       xSiTe      RBS     Campus Map
+All services                 7 available
 
-More / settings               About / 404
-date overrides form           wordmark / factual context
-local storage explanation     Vanguard credit / affiliation
-roadmap + About + repository   direct route home if missing
+What’s Happening                View all
+date     event title and venue
+date     event title and venue
+More services coming soon        icons
+
+Not affiliated with SIT.    About OneSIT
+Home       Services       Events    More
 ```
 
-## Genericness check
+Desktop keeps the same reading order and separates shortcuts from events into two columns. Services retains its searchable catalogue. Events retains month groups and expandable summaries. More keeps personal dates and local preferences. About keeps the Vanguard credit and exact affiliation notice.
 
-The first generic draft would be a marketing hero and identical feature cards. Replace it with the actual academic week, useful service favourites and a dated event list. Keep the compact service grid because it serves recognition and touch use. No invented campus photograph or decorative metrics.
+## Content and assumptions
 
-## Decisions and assumptions
+The home feed contains reviewed public summaries identified in the owner's newsletter. It does not publish the original email, recipient information or embedded posters. Older events leave the upcoming list automatically; the empty state directs attention to the next newsletter review.
 
-The owner selected the wordmark without bottom text for all sizes. Events are deliberately limited to publicly verifiable summaries. External school pages retain their own loading and login behaviour.
+The visible week and selected countdown use Singapore calendar days. Personal overrides remain supported. Missing published dates show an explicit pending state. Service destinations handle their own sign-in.
 
-## Review changes
+## Restraint
 
-Date inputs stack on phone screens. Event months share the academic strip treatment, with real event dates marked in red. Native view transitions settle page content by 6px over 160ms when supported; reduced-motion navigation is immediate. This adds no animation library or continuous clock.
-
-The settings form displays the date currently in use under each optional override. Events and the map appear before future services on Home. The catalogue count separates available services from coming-soon entries. Newsletter manual entry is collapsed until needed; existing events and export stay easier to reach.
+The academic information supports the shortcuts. Do not restore the large week counter, add a second countdown or introduce a marketing heading. Keep familiar phone interactions, useful content and readable controls ahead of decorative effects.

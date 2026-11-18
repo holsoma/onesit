@@ -16,7 +16,7 @@ Service icons are original category illustrations. They are checked-in SVGs, inc
 
 ## Preferences and dates
 
-`onesit.preferences.v1` stores favourites and date overrides in localStorage. The reader validates the version and filters invalid service IDs and dates. Corrupt data returns defaults; unavailable storage leaves changes in memory and shows a warning in settings. Tabs receive storage events.
+`onesit.preferences.v1` stores favourites, date overrides and the selected countdown in localStorage. The reader validates the version and filters invalid service IDs and dates. Existing preferences without a countdown selection retain their favourites and dates and default to Final assessment. Invalid countdown values also fall back to Final assessment. Corrupt data returns defaults; unavailable storage leaves changes in memory and shows a warning in settings. Tabs receive storage events.
 
 Academic calculations use calendar days in Asia/Singapore, including week 7 as recess, week 14 as final assessment and subsequent weeks as the break. A 30-second check and a visibility-change check refresh the date after midnight or device suspension. Unpublished periods do not invent a week number. Countdown targets include the current ongoing period, then the next published period. Personal dates replace their respective target and never display a negative countdown.
 
