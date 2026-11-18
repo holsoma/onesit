@@ -10,7 +10,9 @@ Install Node.js 22.12 or later. Run `npm ci` and `npm run dev`. The website work
 
 Import the public GitHub repository, select Vite, use `npm run build` and publish `dist`. Production follows `main`. Use preview deployments for pull requests.
 
-Set `VITE_SITE_URL` to the production origin before building so canonical links, social metadata and the sitemap match the actual deployment. This is a public value, not a secret. The checked-in default is the requested `https://onesit.vercel.app` address; confirm assignment before describing it as live.
+The live website is https://onesit.vercel.app, connected to the GitHub repository for deployments from `main`. Preview deployments are handled by Vercel for pull requests.
+
+Set `VITE_SITE_URL` to a different production origin before building a fork, so canonical links, social metadata and the sitemap match its deployment. This is a public value, not a secret. The checked-in default is `https://onesit.vercel.app`.
 
 `vercel.json` sets caching and restrictive security headers. Hashed assets have a one-year immutable browser cache. Pages use the platform's normal static-file handling. The newsletter tool needs same-origin workers and local blob images, not a remote upload endpoint.
 

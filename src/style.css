@@ -904,6 +904,8 @@ main:focus {
   transform: scale(0.96);
 }
 .results-heading {
+  flex-wrap: wrap;
+  gap: 6px 16px;
   margin: 28px 0 15px;
   font-size: 12px;
   color: var(--muted);
@@ -1029,6 +1031,12 @@ main:focus {
   font-weight: 400;
   color: var(--ink);
 }
+.field-hint {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--muted);
+  line-height: 1.6;
+}
 .field textarea {
   resize: vertical;
   min-height: 110px;
@@ -1128,6 +1136,7 @@ main:focus {
 .back-link svg {
   width: 14px;
   height: 14px;
+  transition: transform 0.16s var(--ease);
 }
 .roadmap-note {
   display: flex;
@@ -1356,6 +1365,9 @@ main:focus {
   .back-link:hover {
     text-decoration: underline;
   }
+  .back-link:hover svg {
+    transform: translateX(-3px);
+  }
   .text-button:hover {
     color: var(--red);
   }
@@ -1424,6 +1436,9 @@ main:focus {
   }
   .home-aside .campus-note {
     margin-top: 50px;
+  }
+  .home-aside .on-the-way {
+    grid-column: 1 / -1;
   }
   .home-credit {
     display: none;

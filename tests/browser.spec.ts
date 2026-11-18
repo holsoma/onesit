@@ -4,10 +4,14 @@ import path from "node:path";
 for (const width of [320, 360, 430]) {
   test(`primary pages fit a ${width}px phone`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
-    for (const route of ['/', '/services', '/more', '/coming-soon']) {
+    for (const route of ["/", "/services", "/more", "/coming-soon"]) {
       await page.goto(route);
-      expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
-      await expect(page.getByRole('navigation')).toBeVisible();
+      expect(
+        await page.evaluate(
+          () => document.documentElement.scrollWidth <= window.innerWidth,
+        ),
+      ).toBe(true);
+      await expect(page.getByRole("navigation")).toBeVisible();
     }
   });
 }
@@ -68,8 +72,14 @@ test("dates are calculated in Singapore time and overrides persist", async ({
     page.locator(".countdown").filter({ hasText: "Final assessment" }),
   ).toContainText("12 days");
   await page.goto("/more");
+  await expect(page.locator("#date-assessment-hint")).toHaveText(
+    "In use: 30 Nov 2026 (SIT)",
+  );
   await page.getByLabel("Final assessment", { exact: true }).fill("2026-11-20");
   await page.getByRole("button", { name: "Save my dates" }).click();
+  await expect(page.locator("#date-assessment-hint")).toHaveText(
+    "In use: 20 Nov 2026 (your dates)",
+  );
   await page.goto("/");
   await expect(
     page.locator(".countdown").filter({ hasText: "Final assessment" }),
@@ -79,13 +89,19 @@ test("newsletter uses inert text and exports only reviewed fields", async ({
   page,
 }) => {
   await page.goto("/tools/newsletter");
+  await expect(page.getByLabel("Event title", { exact: true })).toBeHidden();
   await page
-    .getByLabel("Open .msg newsletter", { exact: true })
-    .setInputFiles({
-      name: "bad.msg",
-      mimeType: "application/octet-stream",
-      buffer: Buffer.from("not an email"),
-    });
+    .locator(".export-list")
+    .getByRole("button", { name: "Edit", exact: true })
+    .first()
+    .click();
+  await expect(page.getByLabel("Event title", { exact: true })).toBeVisible();
+  await page.getByRole("button", { name: "Cancel edit" }).click();
+  await page.getByLabel("Open .msg newsletter", { exact: true }).setInputFiles({
+    name: "bad.msg",
+    mimeType: "application/octet-stream",
+    buffer: Buffer.from("not an email"),
+  });
   await expect(page.getByRole("alert")).toContainText("not a supported");
   const input = [
     {

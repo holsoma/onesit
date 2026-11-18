@@ -81,6 +81,7 @@ export default function Newsletter() {
   const [draft, setDraft] = useState<Draft>(blankDraft);
   const [reviewed, setReviewed] = useState(false);
   const worker = useRef<Worker | null>(null);
+  const editor = useRef<HTMLDetailsElement | null>(null);
   const importVersion = useRef(0);
   const urls = useRef<string[]>([]);
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -227,6 +228,7 @@ export default function Newsletter() {
     setStatus("Reviewed event added to the export list.");
   }
   function edit(event: CampusEvent) {
+    if (editor.current) editor.current.open = true;
     setDraft({
       ...event,
       start: inSingapore(event.start),
@@ -398,75 +400,26 @@ export default function Newsletter() {
           )}
         </section>
         <section class="review-editor">
-          <h2 id="event-form-heading">
-            {draft.id ? "Edit event" : "Add a reviewed event"}
-          </h2>
-          <form onSubmit={saveDraft}>
-            <div class="editor-fields">
-              {(
-                [
-                  ["title", "Event title"],
-                  ["organiser", "Organiser"],
-                  ["venue", "Venue"],
-                  ["sourceLabel", "Public source name"],
-                ] as const
-              ).map(([key, label]) => (
-                <label class="field">
-                  <span>{label}</span>
-                  <input
-                    required
-                    maxLength={180}
-                    value={draft[key]}
-                    onInput={(e) =>
-                      setDraft({ ...draft, [key]: e.currentTarget.value })
-                    }
-                  />
-                </label>
-              ))}
-              <label class="field">
-                <span>Public source URL</span>
-                <input
-                  required
-                  type="url"
-                  value={draft.url}
-                  onInput={(e) =>
-                    setDraft({ ...draft, url: e.currentTarget.value })
-                  }
-                />
-              </label>
-              <label class="field">
-                <span>Category</span>
-                <select
-                  value={draft.category}
-                  onChange={(e) =>
-                    setDraft({ ...draft, category: e.currentTarget.value })
-                  }
-                >
-                  {[
-                    "Campus",
-                    "Community",
-                    "Culture",
-                    "Careers",
-                    "Sports",
-                    "Learning",
-                  ].map((c) => (
-                    <option>{c}</option>
-                  ))}
-                </select>
-              </label>
-              <div class="form-grid">
+          <details class="event-editor-disclosure" ref={editor}>
+            <summary id="event-form-heading">
+              {draft.id ? "Edit event" : "Add an event manually"}
+              <Icon name="chevron" />
+            </summary>
+            <form onSubmit={saveDraft}>
+              <div class="editor-fields">
                 {(
                   [
-                    ["start", "Starts, Singapore time"],
-                    ["end", "Ends, Singapore time"],
-                    ["registrationCloses", "Registration closes, optional"],
+                    ["title", "Event title"],
+                    ["organiser", "Organiser"],
+                    ["venue", "Venue"],
+                    ["sourceLabel", "Public source name"],
                   ] as const
                 ).map(([key, label]) => (
                   <label class="field">
                     <span>{label}</span>
                     <input
-                      type="datetime-local"
-                      required={key !== "registrationCloses"}
+                      required
+                      maxLength={180}
                       value={draft[key]}
                       onInput={(e) =>
                         setDraft({ ...draft, [key]: e.currentTarget.value })
@@ -474,49 +427,101 @@ export default function Newsletter() {
                     />
                   </label>
                 ))}
-              </div>
-              <label class="field">
-                <span>Short summary</span>
-                <textarea
-                  required
-                  maxLength={1200}
-                  value={draft.summary}
-                  onInput={(e) =>
-                    setDraft({ ...draft, summary: e.currentTarget.value })
-                  }
-                />
-              </label>
-              <label class="review-check">
-                <input
-                  type="checkbox"
-                  checked={reviewed}
-                  onChange={(e) => setReviewed(e.currentTarget.checked)}
-                />
-                <span>
-                  I checked the details and source. This summary is suitable for
-                  public publication.
-                </span>
-              </label>
-              <div class="form-actions">
-                <button class="button button-primary" type="submit">
-                  <Icon name="plus" />
-                  {draft.id ? "Save changes" : "Add event"}
-                </button>
-                {draft.id && (
-                  <button
-                    type="button"
-                    class="text-button"
-                    onClick={() => {
-                      setDraft(blankDraft());
-                      setReviewed(false);
-                    }}
+                <label class="field">
+                  <span>Public source URL</span>
+                  <input
+                    required
+                    type="url"
+                    value={draft.url}
+                    onInput={(e) =>
+                      setDraft({ ...draft, url: e.currentTarget.value })
+                    }
+                  />
+                </label>
+                <label class="field">
+                  <span>Category</span>
+                  <select
+                    value={draft.category}
+                    onChange={(e) =>
+                      setDraft({ ...draft, category: e.currentTarget.value })
+                    }
                   >
-                    Cancel edit
+                    {[
+                      "Campus",
+                      "Community",
+                      "Culture",
+                      "Careers",
+                      "Sports",
+                      "Learning",
+                    ].map((c) => (
+                      <option>{c}</option>
+                    ))}
+                  </select>
+                </label>
+                <div class="form-grid">
+                  {(
+                    [
+                      ["start", "Starts, Singapore time"],
+                      ["end", "Ends, Singapore time"],
+                      ["registrationCloses", "Registration closes, optional"],
+                    ] as const
+                  ).map(([key, label]) => (
+                    <label class="field">
+                      <span>{label}</span>
+                      <input
+                        type="datetime-local"
+                        required={key !== "registrationCloses"}
+                        value={draft[key]}
+                        onInput={(e) =>
+                          setDraft({ ...draft, [key]: e.currentTarget.value })
+                        }
+                      />
+                    </label>
+                  ))}
+                </div>
+                <label class="field">
+                  <span>Short summary</span>
+                  <textarea
+                    required
+                    maxLength={1200}
+                    value={draft.summary}
+                    onInput={(e) =>
+                      setDraft({ ...draft, summary: e.currentTarget.value })
+                    }
+                  />
+                </label>
+                <label class="review-check">
+                  <input
+                    type="checkbox"
+                    checked={reviewed}
+                    onChange={(e) => setReviewed(e.currentTarget.checked)}
+                  />
+                  <span>
+                    I checked the details and source. This summary is suitable
+                    for public publication.
+                  </span>
+                </label>
+                <div class="form-actions">
+                  <button class="button button-primary" type="submit">
+                    <Icon name="plus" />
+                    {draft.id ? "Save changes" : "Add event"}
                   </button>
-                )}
+                  {draft.id && (
+                    <button
+                      type="button"
+                      class="text-button"
+                      onClick={() => {
+                        setDraft(blankDraft());
+                        setReviewed(false);
+                      }}
+                    >
+                      Cancel edit
+                    </button>
+                  )}
+                </div>
               </div>
-            </div>
-          </form>
+            </form>
+          </details>
         </section>
       </div>
       <section class="export-panel">

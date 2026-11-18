@@ -9,10 +9,11 @@
 Campus services, academic dates and student events, made for your phone.
 
 [![Checks](https://github.com/holsoma/onesit/actions/workflows/checks.yml/badge.svg)](https://github.com/holsoma/onesit/actions/workflows/checks.yml)
+[![Open OneSIT](https://img.shields.io/badge/Open-OneSIT-C72535?labelColor=242327)](https://onesit.vercel.app)
 [![Licence: MIT](https://img.shields.io/badge/Licence-MIT-C72535?labelColor=242327)](LICENSE)
 [![Preact](https://img.shields.io/badge/Preact-TypeScript-C72535?labelColor=242327)](docs/ARCHITECTURE.md)
 
-[Features](#features) · [Setup guide](docs/SETUP.md) · [Contribute](CONTRIBUTING.md) · [Report an issue](https://github.com/holsoma/onesit/issues)
+[Open OneSIT](https://onesit.vercel.app) · [Features](#features) · [Setup guide](docs/SETUP.md) · [Contribute](CONTRIBUTING.md) · [Report an issue](https://github.com/holsoma/onesit/issues)
 
 **Not affiliated with SIT.**
 
@@ -36,6 +37,8 @@ Campus services, academic dates and student events, made for your phone.
 Food ordering with Cates and Wholesome, Punggol train and bus times, MediHub, campus facilities, room-code mappings, games inventories, student tools and community links. Android packaging follows the website release.
 
 ## Get started
+
+**[Open OneSIT in your browser](https://onesit.vercel.app).** No account is required.
 
 Use Node.js 22.12 or later:
 
@@ -67,6 +70,7 @@ The production preview runs at `http://127.0.0.1:4400`. Automated browser tests 
 | [Newsletter maintenance](docs/NEWSLETTERS.md) | Local .msg review, public summaries and publication.                      |
 | [Brand](docs/BRAND.md)                        | Wordmark concepts, affiliation wording and Vanguard credit.               |
 | [Design system](DESIGN.md)                    | Mobile layout, typography, colour and interaction rules.                  |
+| [Release validation](docs/VALIDATION.md)      | Browser checks, measured performance and review findings.                  |
 | [Contributing](CONTRIBUTING.md)               | Development checks, issue reports and pull requests.                      |
 
 ## From a member of SIT Vanguard

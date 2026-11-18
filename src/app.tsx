@@ -1,5 +1,5 @@
 import { createContext } from "preact";
-import { useContext, useEffect, useRef, useState } from "preact/hooks";
+import { useContext, useEffect, useLayoutEffect, useRef, useState } from "preact/hooks";
 import {
   ErrorBoundary,
   LocationProvider,
@@ -9,7 +9,7 @@ import {
   useLocation,
 } from "preact-iso";
 import { Icon } from "./components/Icon";
-import { useRouteTransition } from './lib/route-transition';
+import { useRouteTransition } from "./lib/route-transition";
 import { ServiceCard } from "./components/ServiceCard";
 import { EventList } from "./components/EventList";
 import { services, categories } from "./data/services";
@@ -380,40 +380,6 @@ function Home() {
               </span>
             </a>
           </section>
-          <section class="on-the-way" aria-labelledby="on-the-way-heading">
-            <div class="section-heading">
-              <h2 id="on-the-way-heading">On the way</h2>
-              <a class="text-link" href="/coming-soon">
-                View all <Icon name="arrow" />
-              </a>
-            </div>
-            <div class="future-strip">
-              {services
-                .filter((s) =>
-                  ["cates", "transport", "medihub", "facilities"].includes(
-                    s.id,
-                  ),
-                )
-                .map((s) => (
-                  <div class="future-shortcut">
-                    <img
-                      src={`/services/${s.icon}.svg`}
-                      alt=""
-                      width="40"
-                      height="40"
-                    />
-                    <span>
-                      {s.id === "transport"
-                        ? "Transport"
-                        : s.id === "facilities"
-                          ? "Facilities"
-                          : s.name}
-                    </span>
-                    <small>Coming soon</small>
-                  </div>
-                ))}
-            </div>
-          </section>
         </div>
         <aside class="home-aside">
           <section
@@ -451,6 +417,40 @@ function Home() {
             </div>
             <Icon name="external" />
           </a>
+          <section class="on-the-way" aria-labelledby="on-the-way-heading">
+            <div class="section-heading">
+              <h2 id="on-the-way-heading">On the way</h2>
+              <a class="text-link" href="/coming-soon">
+                View all <Icon name="arrow" />
+              </a>
+            </div>
+            <div class="future-strip">
+              {services
+                .filter((s) =>
+                  ["cates", "transport", "medihub", "facilities"].includes(
+                    s.id,
+                  ),
+                )
+                .map((s) => (
+                  <div class="future-shortcut">
+                    <img
+                      src={`/services/${s.icon}.svg`}
+                      alt=""
+                      width="40"
+                      height="40"
+                    />
+                    <span>
+                      {s.id === "transport"
+                        ? "Transport"
+                        : s.id === "facilities"
+                          ? "Facilities"
+                          : s.name}
+                    </span>
+                    <small>Coming soon</small>
+                  </div>
+                ))}
+            </div>
+          </section>
           <div class="home-credit">
             <span class="tiny-wordmark">
               One<span>SIT</span>
@@ -516,7 +516,11 @@ function Services() {
         </div>
       </div>
       <div class="section-heading results-heading">
-        <p>{matches.length} services</p>
+        <p>
+          {matches.filter((s) => s.status === "available").length} available
+          {" · "}
+          {matches.filter((s) => s.status !== "available").length} coming soon
+        </p>
         <span>
           <Icon name="star" />
           Star to keep on Home
@@ -591,13 +595,51 @@ function Events() {
         </div>
         <span>{filtered.length} events</span>
       </div>
-      {filtered.length ? [...new Set(filtered.map(event=>singaporeDay(new Date(event.start)).slice(0,7)))].map(month=>{
-        const monthEvents=filtered.filter(event=>singaporeDay(new Date(event.start)).startsWith(month));
-        const [year,monthNumber]=month.split('-').map(Number);
-        const days=new Date(Date.UTC(year,monthNumber,0)).getUTCDate();
-        const eventDays=new Set(monthEvents.map(event=>Number(singaporeDay(new Date(event.start)).slice(-2))));
-        return <section class="event-month" key={month}><div class="month-heading"><h2>{formatDay(month+'-01',{month:'long',year:'numeric'})}</h2><span>{monthEvents.length} {monthEvents.length===1?'event':'events'}</span></div><div class="month-strip" role="img" aria-label={`Event starting dates: ${[...eventDays].join(', ')} ${formatDay(month+'-01',{month:'long'})}`}>{Array.from({length:days},(_,i)=><span class={eventDays.has(i+1)?'event-day':''}/>)}</div><EventList events={monthEvents} now={now}/></section>
-      }) : <EventList events={filtered} now={now}/>}
+      {filtered.length ? (
+        [
+          ...new Set(
+            filtered.map((event) =>
+              singaporeDay(new Date(event.start)).slice(0, 7),
+            ),
+          ),
+        ].map((month) => {
+          const monthEvents = filtered.filter((event) =>
+            singaporeDay(new Date(event.start)).startsWith(month),
+          );
+          const [year, monthNumber] = month.split("-").map(Number);
+          const days = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
+          const eventDays = new Set(
+            monthEvents.map((event) =>
+              Number(singaporeDay(new Date(event.start)).slice(-2)),
+            ),
+          );
+          return (
+            <section class="event-month" key={month}>
+              <div class="month-heading">
+                <h2>
+                  {formatDay(month + "-01", { month: "long", year: "numeric" })}
+                </h2>
+                <span>
+                  {monthEvents.length}{" "}
+                  {monthEvents.length === 1 ? "event" : "events"}
+                </span>
+              </div>
+              <div
+                class="month-strip"
+                role="img"
+                aria-label={`Event starting dates: ${[...eventDays].join(", ")} ${formatDay(month + "-01", { month: "long" })}`}
+              >
+                {Array.from({ length: days }, (_, i) => (
+                  <span class={eventDays.has(i + 1) ? "event-day" : ""} />
+                ))}
+              </div>
+              <EventList events={monthEvents} now={now} />
+            </section>
+          );
+        })
+      ) : (
+        <EventList events={filtered} now={now} />
+      )}
       <div class="content-note">
         <Icon name="book" />
         <div>
@@ -612,10 +654,19 @@ function Events() {
   );
 }
 function More() {
-  const { preferences, update, announce, storageWarning } = useApp();
+  const { preferences, update, announce, storageWarning, now } = useApp();
   const [draft, setDraft] = useState<DateOverrides>(preferences.dates);
   const [resetting, setResetting] = useState(false);
-  useEffect(() => setDraft(preferences.dates), [preferences.dates]);
+  const day = now ? singaporeDay(now) : null;
+  const activeDates: DateOverrides = day
+    ? {
+        start: preferences.dates.start || academicState(day).term?.start,
+        ...Object.fromEntries(
+          countdowns(day, preferences.dates).map((c) => [c.kind, c.target]),
+        ),
+      }
+    : {};
+  useLayoutEffect(() => setDraft(preferences.dates), [preferences.dates]);
   return (
     <div class="page narrow-page">
       <PageHeading
@@ -631,7 +682,8 @@ function More() {
         </div>
         <p class="section-intro">
           We use the published SIT calendar. Add your own dates when your
-          schedule differs.
+          schedule differs. Blank fields use dates calculated from the trimester
+          start.
         </p>
         <form
           onSubmit={(e) => {
@@ -649,9 +701,11 @@ function More() {
                 ["recess", "Recess week"],
               ] as const
             ).map(([key, label]) => (
-              <label class="field">
-                <span>{label}</span>
+              <div class="field">
+                <label for={`date-${key}`}>{label}</label>
                 <input
+                  id={`date-${key}`}
+                  aria-describedby={`date-${key}-hint`}
                   type="date"
                   value={draft[key] || ""}
                   onInput={(e) =>
@@ -661,7 +715,12 @@ function More() {
                     })
                   }
                 />
-              </label>
+                <small class="field-hint" id={`date-${key}-hint`}>
+                  {activeDates[key]
+                    ? `In use: ${formatDay(activeDates[key]!, { day: "numeric", month: "short", year: "numeric" })} (${preferences.dates[key] || preferences.dates.start ? "your dates" : "SIT"})`
+                    : "Published dates not available"}
+                </small>
+              </div>
             ))}
           </div>
           <div class="form-actions">

@@ -72,3 +72,5 @@ The main wordmark has no tagline at phone size. The owner has not selected a fin
 ## Review changes
 
 Date inputs stack on phone screens. Event months share the academic strip treatment, with real event dates marked in red. Native view transitions settle page content by 6px over 160ms when supported; reduced-motion navigation is immediate. This adds no animation library or continuous clock.
+
+The settings form displays the date currently in use under each optional override. Events and the map appear before future services on Home. The catalogue count separates available services from coming-soon entries. Newsletter manual entry is collapsed until needed; existing events and export stay easier to reach.
