@@ -533,8 +533,9 @@ export default function Newsletter() {
           </button>
         </div>
         <p class="section-intro">
-          This list starts with the current published feed. Removing an entry
-          excludes it from the exported file.
+          This list starts with two previously reviewed examples. Load your
+          working event file before editing. Removing an entry excludes it from
+          the exported file.
         </p>
         <ul class="export-list">
           {entries.map((event) => (
@@ -561,9 +562,9 @@ export default function Newsletter() {
           ))}
         </ul>
         <p class="help-note">
-          To publish, replace <code>src/data/events.json</code> in your checkout
-          with the exported file, review the changes, run the checks and commit.
-          This tool has no permission to change GitHub.
+          Exported summaries are review material. The public catalogue is
+          maintained separately with its section groups and posters. See the
+          newsletter maintenance guide in the repository before publishing.
         </p>
       </section>
     </div>

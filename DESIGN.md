@@ -30,7 +30,7 @@ Screenshot: Small week label, one countdown, four service icons and dated events
 - Home surface: #FFFFFF. Other pages: #F7F7F8. Ink: #242327. Secondary text: #69666E. Lines: #E7E5E9. Accent: #C72535. Soft accent: #FBECEF. Wordmark red: #F0323C.
 - System sans typography. On phones: 24px shortcut heading, 18px section headings, 12px week label, 15px countdown value. Native select text stays 16px to avoid automatic zoom on mobile browsers.
 - Phone gutters: 20px, reducing to 16px at 320px. Four shortcuts per row, wrapping when more are saved. Keep the bottom navigation and safe-area padding.
-- Desktop: existing navigation rail. Academic context sits above aligned shortcut and event columns. At 1100px and below, use one column with a capped reading width.
+- Desktop: existing navigation rail. Academic context and shortcuts sit above the newsletter catalogue. Posters use three columns on wide screens, two on tablets and one on phones.
 - Main controls use 12px corners. Shortcut icons use 16px corners. Avoid framing every service in a separate card on Home.
 - Only one countdown is visible. The native selector offers Final assessment, Trimester break and Recess week. Persist the choice with favourites and personal dates; older saved preferences remain valid.
 - Still at rest. Use 160ms press, lift and directional feedback. Native page transitions remain available and respect reduced motion.
@@ -51,20 +51,23 @@ Your shortcuts                     Edit
 IN4SIT       xSiTe      RBS     Campus Map
 All services                 7 available
 
-What’s Happening                View all
-date     event title and venue
-date     event title and venue
+What’s Happening
+[Internal] [SITeQuests] [External] [Announcements]
+Internal events
+[poster opens original]
+title, organiser, summary, date and venue
+...remaining newsletter sections
 More services coming soon        icons
 
 Not affiliated with SIT.    About OneSIT
 Home       Services       Events    More
 ```
 
-Desktop keeps the same reading order and separates shortcuts from events into two columns. Services retains its searchable catalogue. Events retains month groups and expandable summaries. More keeps personal dates and local preferences. About keeps the Vanguard credit and exact affiliation notice.
+Desktop keeps the same reading order. Home and Events share the full newsletter catalogue. Section links jump to Internal events, SITeQuests, External events and Announcements. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the Vanguard credit and exact affiliation notice.
 
 ## Content and assumptions
 
-The home feed contains reviewed public summaries identified in the owner's newsletter. It does not publish the original email, recipient information or embedded posters. Older events leave the upcoming list automatically; the empty state directs attention to the next newsletter review.
+The owner approved publishing the reviewed 19-entry catalogue and its posters. Home and Events retain the newsletter's section order, including past entries, surveys and the report announcement. The first smaller WebP preview loads eagerly and the remaining previews load lazily. Selecting an image opens the original in a new tab. No separate poster links or reviewer comments appear. Raw email and recipient information remain excluded.
 
 The visible week and selected countdown use Singapore calendar days. Personal overrides remain supported. Missing published dates show an explicit pending state. Service destinations handle their own sign-in.
 

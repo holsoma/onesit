@@ -10,7 +10,8 @@ Primary screens share a small bundle. The newsletter editor is a separate dynami
 
 - Services: stable ID, label, description, category, status, local icon and an optional external URL. Only available entries expose links and favourite controls.
 - Academic terms: published start and end dates, year and trimester number. The source and verification date are kept beside the records.
-- Events: stable ID, title, summary, organiser, category, venue, start/end with timezones, source URL, source label, verification date and optional registration deadline.
+- Catalogue: section ID and title, then entries with stable IDs, titles, summaries, organisers, displayed dates and venues, local poster paths, preview paths and image dimensions. Home and Events render the same `src/data/catalogue.json` records in newsletter order. Past entries remain part of the issue.
+- Newsletter review exports: dated event summaries with timezones, source URLs and optional registration deadlines. These are a separate format used by the local review tool, not the displayed catalogue.
 
 Service icons are original category illustrations. They are checked-in SVGs, including the greyed-out future services. No favicon service or third-party image host is contacted by a visitor.
 
@@ -22,7 +23,7 @@ Academic calculations use calendar days in Asia/Singapore, including week 7 as r
 
 ## Publication and privacy
 
-The newsletter tool has no GitHub token or upload endpoint. It reads the local file, extracts inert content and exports only the allowed public event fields. Publishing is a repository change followed by a static deployment. Existing school websites control their own authentication and loading speed.
+The newsletter tool has no GitHub token or upload endpoint. It reads the local file, extracts inert content and exports only the allowed event fields. The catalogue and selected posters are published through a reviewed repository change followed by a static deployment. Raw emails and recipient metadata remain private. The first WebP poster preview loads eagerly; the remaining previews load lazily. Full originals load only when opened. Existing school websites control their own authentication and loading speed.
 
 ## Dependency audit
 

@@ -20,13 +20,13 @@ A mobile website for SIT services, academic dates and student events.
 
 - Shortcuts to IN4SIT, xSiTe, RBS, Campus Map, Student intranet, Academic calendar and ReadyTalent, with favourites on Home.
 - The current academic week and one selectable countdown for Final assessment, Trimester break or Recess week, with personal date overrides.
-- What’s Happening lists selected event summaries, dates, venues and public organiser links.
+- What’s Happening shows the newsletter catalogue, grouped into internal events, SITeQuests, external events and announcements. Select a poster to open the original image.
 - Favourites, the countdown choice and personal dates are saved in this browser. OneSIT requires no account; school services handle their own sign-in.
-- A separate newsletter tool reads `.msg` files and embedded images locally, then exports reviewed event summaries for manual publication.
+- A separate newsletter tool reads `.msg` files and embedded images locally, then exports event summaries for review. Catalogue publication is a separate manual step.
 
 Cates, Wholesome, Punggol transport, MediHub, campus facilities and useful links are listed as coming soon. Android packaging is planned.
 
-The public event feed contains selected summaries. Original newsletters, posters and the local review catalogue are excluded from the public repository.
+The catalogue includes 19 reviewed entries and their posters. Raw newsletters, email metadata and local review files are excluded from the public repository.
 
 ## Development
 

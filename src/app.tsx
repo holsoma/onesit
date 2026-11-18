@@ -18,10 +18,9 @@ import { Icon } from "./components/Icon";
 import { CampusDock } from "./components/CampusDock";
 import { useRouteTransition } from "./lib/route-transition";
 import { ServiceCard } from "./components/ServiceCard";
-import { EventList } from "./components/EventList";
+import { NewsletterCatalogue } from "./components/NewsletterCatalogue";
 import { services, categories } from "./data/services";
 import { calendarSource, calendarVerified } from "./data/calendar";
-import eventData from "./data/events.json";
 import { pageMeta, site } from "./data/site";
 import {
   academicState,
@@ -35,14 +34,12 @@ import {
   storageKey,
 } from "./lib/preferences";
 import type { Preferences } from "./lib/preferences";
-import type { CampusEvent } from "./lib/events";
 import type { DateOverrides } from "./lib/dates";
 import "./style.css";
 import "./components/campus-dock.css";
 import "./transitions.css";
 
 const Newsletter = lazy(() => import("./pages/Newsletter"));
-const events = eventData as CampusEvent[];
 const AppContext = createContext<{
   preferences: Preferences;
   update: (p: Preferences) => void;
@@ -343,100 +340,10 @@ function Services() {
   );
 }
 function Events() {
-  const { now } = useApp();
-  const [filter, setFilter] = useState("Upcoming");
-  const filtered = events
-    .filter((e) =>
-      !now
-        ? filter === "Upcoming"
-        : filter === "Past"
-          ? Date.parse(e.end) < now.getTime()
-          : Date.parse(e.end) >= now.getTime(),
-    )
-    .sort((a, b) =>
-      filter === "Past"
-        ? Date.parse(b.start) - Date.parse(a.start)
-        : Date.parse(a.start) - Date.parse(b.start),
-    );
   return (
-    <div class="page narrow-page">
-      <PageHeading
-        title="What’s Happening"
-        description="Events worth stepping out for."
-      />
-      <div class="events-toolbar">
-        <div class="filter-group" aria-label="Event dates">
-          {["Upcoming", "Past"].map((c) => (
-            <button
-              class={filter === c ? "selected" : ""}
-              aria-pressed={filter === c}
-              onClick={() => setFilter(c)}
-            >
-              {c}
-            </button>
-          ))}
-        </div>
-        <span>{filtered.length} events</span>
-      </div>
-      {filtered.length ? (
-        [
-          ...new Set(
-            filtered.map((event) =>
-              singaporeDay(new Date(event.start)).slice(0, 7),
-            ),
-          ),
-        ].map((month) => {
-          const monthEvents = filtered.filter((event) =>
-            singaporeDay(new Date(event.start)).startsWith(month),
-          );
-          const [year, monthNumber] = month.split("-").map(Number);
-          const days = new Date(Date.UTC(year, monthNumber, 0)).getUTCDate();
-          const eventDays = new Set(
-            monthEvents.map((event) =>
-              Number(singaporeDay(new Date(event.start)).slice(-2)),
-            ),
-          );
-          return (
-            <section class="event-month" key={month}>
-              <div class="month-heading">
-                <h2>
-                  {formatDay(month + "-01", { month: "long", year: "numeric" })}
-                </h2>
-                <span>
-                  {monthEvents.length}{" "}
-                  {monthEvents.length === 1 ? "event" : "events"}
-                </span>
-              </div>
-              <div
-                class="month-strip"
-                role="img"
-                aria-label={`Event starting dates: ${[...eventDays].join(", ")} ${formatDay(month + "-01", { month: "long" })}`}
-              >
-                {Array.from({ length: days }, (_, i) => (
-                  <span class={eventDays.has(i + 1) ? "event-day" : ""} />
-                ))}
-              </div>
-              <div class="month-scale" aria-hidden="true">
-                <span>{formatDay(month + "-01")}</span>
-                <span>{formatDay(month + "-" + days)}</span>
-              </div>
-              <EventList events={monthEvents} now={now} />
-            </section>
-          );
-        })
-      ) : (
-        <EventList events={filtered} now={now} />
-      )}
-      <div class="content-note">
-        <Icon name="book" />
-        <div>
-          <strong>From the newsletter, checked for you.</strong>
-          <p>
-            Selected events from What’s Happening, checked against public
-            organiser pages. Dates and availability can change.
-          </p>
-        </div>
-      </div>
+    <div class="page catalogue-page">
+      <PageHeading title="What’s Happening" />
+      <NewsletterCatalogue />
     </div>
   );
 }

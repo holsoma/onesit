@@ -11,7 +11,7 @@ for (const width of [320, 360, 430]) {
           () => document.documentElement.scrollWidth <= window.innerWidth,
         ),
       ).toBe(true);
-      await expect(page.getByRole("navigation")).toBeVisible();
+      await expect(page.getByRole("navigation", { name: "Main navigation" })).toBeVisible();
     }
   });
 }
@@ -49,7 +49,7 @@ test("mobile services retain icons, disabled state and favourites", async ({
     .getByRole("button", { name: "Add ReadyTalent to favourites", exact: true })
     .click();
   await page
-    .getByRole("navigation")
+    .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Home", exact: true })
     .click();
   await expect(
@@ -134,7 +134,7 @@ test("Campus Dock handles extra favourites and an empty dock", async ({
       .click();
   }
   await page
-    .getByRole("navigation")
+    .getByRole("navigation", { name: "Main navigation" })
     .getByRole("link", { name: "Home", exact: true })
     .click();
   await expect(page.locator(".dock-shortcut")).toHaveCount(7);
@@ -167,6 +167,35 @@ test("Campus Dock handles extra favourites and an empty dock", async ({
   await expect(page.locator(".dock-shortcut")).toHaveCount(0);
   await expect(page.locator(".dock-countdown")).toHaveCount(1);
 });
+test("newsletter catalogue keeps its sections and opens original posters", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  const originals: string[] = [];
+  page.on("request", request => {
+    if (request.url().includes("-original.")) originals.push(request.url());
+  });
+  for (const route of ["/", "/events"]) {
+    await page.goto(route);
+    await expect(page.locator(".catalogue-entry")).toHaveCount(19);
+    for (const [section, count] of [["internal", 10], ["sitequests", 1], ["external", 7], ["announcements", 1]] as const) {
+      await expect(page.locator(`#catalogue-${section} article`)).toHaveCount(count);
+    }
+    await page.getByRole("navigation", { name: "Newsletter sections" }).getByRole("link", { name: "External events", exact: true }).click();
+    await expect(page).toHaveURL(/#catalogue-external$/);
+    await expect(page.getByRole("heading", { name: "External events", exact: true })).toBeInViewport();
+  }
+  expect(originals).toEqual([]);
+  const poster = page.locator(".catalogue-poster").first();
+  await poster.scrollIntoViewIfNeeded();
+  await poster.focus();
+  const popupPromise = page.waitForEvent("popup");
+  await poster.press("Enter");
+  const popup = await popupPromise;
+  await popup.waitForLoadState();
+  await expect(popup).toHaveURL(/01-original\.png$/);
+  expect(await popup.locator("img").evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
+  await popup.close();
+});
+
 test("newsletter uses inert text and exports only reviewed fields", async ({
   page,
 }) => {

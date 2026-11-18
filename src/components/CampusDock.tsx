@@ -1,5 +1,5 @@
 import { Icon } from "./Icon";
-import { EventList } from "./EventList";
+import { NewsletterCatalogue } from "./NewsletterCatalogue";
 import { services } from "../data/services";
 import { countdownNames } from "../data/calendar";
 import type { CountdownKind } from "../data/calendar";
@@ -10,10 +10,6 @@ import {
   singaporeDay,
 } from "../lib/dates";
 import type { Preferences } from "../lib/preferences";
-import type { CampusEvent } from "../lib/events";
-import eventData from "../data/events.json";
-
-const events = eventData as CampusEvent[];
 const countdownChoices: CountdownKind[] = ["assessment", "break", "recess"];
 
 export function CampusDock({
@@ -35,9 +31,6 @@ export function CampusDock({
   const favourites = preferences.favourites
     .map((id) => services.find((service) => service.id === id))
     .filter((service) => service?.status === "available");
-  const upcoming = events
-    .filter((event) => !now || Date.parse(event.end) >= now.getTime())
-    .slice(0, 3);
   const weekLabel = academic?.week
     ? `Week ${academic.week}`
     : day
@@ -108,7 +101,7 @@ export function CampusDock({
           </strong>
         </section>
       </div>
-      <div class="dock-layout">
+      <div class="dock-layout dock-catalogue-layout">
         <div class="dock-primary">
           <section aria-labelledby="shortcuts-heading" class="dock-favourites">
             <div class="dock-section-heading">
@@ -167,33 +160,29 @@ export function CampusDock({
             </a>
           </section>
         </div>
-
-        <div class="dock-secondary">
-          <section class="dock-events" aria-labelledby="happening-heading">
-            <div class="dock-section-heading">
-              <h2 id="happening-heading">What’s Happening</h2>
-              <a class="text-link" href="/events" aria-label="View all events">
-                View all <Icon name="arrow" />
-              </a>
-            </div>
-            <EventList events={upcoming} now={now} compact />
-          </section>
-          <a class="dock-coming-soon" href="/coming-soon">
-            <span>More services coming soon</span>
-            <span class="dock-future-icons" aria-hidden="true">
-              {["cates", "transport", "health"].map((icon) => (
-                <img
-                  key={icon}
-                  src={`/services/${icon}.svg`}
-                  alt=""
-                  width="26"
-                  height="26"
-                  loading="lazy"
-                />
-              ))}
-            </span>
-          </a>
+      </div>
+      <section class="dock-catalogue" aria-labelledby="happening-heading">
+        <div class="dock-section-heading">
+          <h2 id="happening-heading">What’s Happening</h2>
         </div>
+        <NewsletterCatalogue nested />
+      </section>
+      <div class="dock-secondary">
+        <a class="dock-coming-soon" href="/coming-soon">
+          <span>More services coming soon</span>
+          <span class="dock-future-icons" aria-hidden="true">
+            {["cates", "transport", "health"].map((icon) => (
+              <img
+                key={icon}
+                src={`/services/${icon}.svg`}
+                alt=""
+                width="26"
+                height="26"
+                loading="lazy"
+              />
+            ))}
+          </span>
+        </a>
       </div>
     </div>
   );

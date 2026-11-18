@@ -1,0 +1,113 @@
+.catalogue-sections {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 24px;
+  margin-bottom: 24px;
+  border-bottom: 1px solid var(--line);
+}
+.catalogue-sections a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  color: var(--muted);
+  font-size: 13px;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+.catalogue-section {
+  margin-top: 40px;
+  scroll-margin-top: 24px;
+}
+.catalogue-section:first-of-type {
+  margin-top: 0;
+}
+.catalogue-section > h2,
+.catalogue-section > h3 {
+  font-size: 18px;
+  padding: 0 0 14px 12px;
+  margin-bottom: 24px;
+  border-left: 3px solid var(--red);
+  border-bottom: 1px solid var(--line);
+}
+.catalogue-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 28px;
+  align-items: start;
+}
+.catalogue-entry {
+  min-width: 0;
+}
+.catalogue-poster {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 1;
+  background: var(--surface);
+  transition: transform 160ms var(--ease);
+}
+.catalogue-poster img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.catalogue-entry > h3,
+.catalogue-entry > h4 {
+  font-size: 17px;
+  line-height: 1.4;
+  font-weight: 650;
+  letter-spacing: -0.2px;
+  margin: 18px 0 5px;
+}
+.catalogue-organiser {
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.6;
+}
+.catalogue-summary {
+  margin-top: 16px;
+  font-size: 15px;
+  line-height: 1.65;
+}
+.catalogue-facts {
+  margin: 18px 0 0;
+  font-size: 14px;
+  line-height: 1.65;
+}
+.catalogue-facts > div + div {
+  margin-top: 12px;
+}
+.catalogue-facts dt {
+  font-weight: 600;
+}
+.catalogue-facts dd {
+  margin: 3px 0 0;
+  color: var(--muted);
+}
+.catalogue-poster:active {
+  transform: scale(0.98);
+}
+@media (hover: hover) {
+  .catalogue-poster:hover {
+    transform: translateY(-3px);
+  }
+  .catalogue-sections a:hover {
+    color: var(--red);
+  }
+}
+@media (max-width: 1250px) {
+  .catalogue-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 720px) {
+  .catalogue-grid { grid-template-columns: 1fr; gap: 36px; }
+  .catalogue-sections { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 16px; }
+  .catalogue-section { scroll-margin-top: 88px; }
+  .catalogue-summary { font-size: 16px; }
+  .catalogue-facts { font-size: 15px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .catalogue-poster { transition: none; }
+  .catalogue-poster:hover,
+  .catalogue-poster:active { transform: none; }
+}

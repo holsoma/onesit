@@ -1,35 +1,29 @@
-# Campus Dock validation
+# Catalogue validation
 
 Validated on 18 November 2026 against the production build.
 
 ## Functional checks
 
-- TypeScript, ESLint and 14 logic tests pass.
-- Nine browser tests pass. They cover layouts at 320, 360 and 430 pixels; available and coming-soon services; favourites; Singapore dates and overrides; one selectable countdown and persistence; zero and seven favourites; invalid newsletter imports; allowed export fields; and the supplied private newsletter.
-- Existing version-one preferences without a countdown choice retain their favourites and dates. They default to Final assessment. Unknown countdown values also fall back safely.
-- The actual roughly 37 MB newsletter imports locally, with no external requests observed during import. It is not included in the repository.
-- The public event feed remains unchanged. The full newsletter catalogue and extracted images were prepared separately for the owner's local review.
+- TypeScript, ESLint, 14 logic tests and the production build pass.
+- All 10 browser tests pass locally, including the supplied private newsletter. CI skips that private-file test. The suite covers phone layouts, services, favourites, academic dates, countdown persistence, catalogue sections, keyboard poster opening and newsletter imports/exports.
+- Home and Events each render 19 entries: 10 internal events, one SITeQuest, seven external events and one announcement.
+- All 19 previews decode successfully. All original poster URLs return HTTP 200 with image content types. Originals are not requested until opened.
+- Raw newsletters and local review files remain outside the repository.
 
-## Visual and accessibility checks
+## Layout and accessibility
 
-Two complete screenshot passes cover seven public page types on desktop, throttled mobile and reduced motion, with navigation, keyboard and hover evidence. Supplemental captures cover the selected countdown, seven shortcuts, expanded event details, saved dates and widths of 320, 768, 1024 and 1920 pixels.
+Two screenshot passes cover Home and Events at 1440, 768, 390 and 320 pixels. Neither page has horizontal overflow or browser errors. Section links scroll to their headings. Keyboard activation opens the original poster in a new tab, and the focused poster has a visible outline. Reduced-motion screenshots retain the catalogue content.
 
-All eight routes, including the newsletter tool, have no reported WCAG A/AA violations, browser errors, missing images or horizontal overflow in the final 390px checks. Sampled touch targets are at least 44px. Reduced-motion content remains visible.
+The final Home WCAG A/AA scan reports no violations. The static audit crawled six public routes with zero failures and zero warnings.
 
-The screenshot tool flagged the Services search input as lacking focus. A separate eight-Tab capture shows a clear 2px red outline on the enclosing search field. The tool inspected only the input, so this was a false positive. Both the screenshot and computed styles were reviewed.
-
-The first design review led to consistent colours for available service icons, shared desktop alignment, labelled event-month scales and visible event start times. Grey remains reserved for coming-soon services.
-
-The second fresh critic scored the interface **7.51/10** after the focus evidence was supplied: Design 7.5, Usability 8.0, Creativity 6.8 and Content 7.5. Developer scores were Semantics/SEO 8.0, Animation 7.5, Accessibility 8.0, Performance 9.0, Responsive design 8.5 and Metadata 8.0. These are agent estimates, not an official Awwwards assessment.
-
-The remaining design opportunities are desktop content prominence and a more distinctive visual identity. The owner's selected minimal dock remains the basis of the release.
+The first visual review led to dates appearing before descriptions, a two-column arrangement for phone section links, and moving the coming-soon link after the catalogue. A fresh second critic found no release-blocking layout fault and scored the interface 6.75/10. This is an agent estimate, not an official Awwwards assessment. The catalogue keeps the reviewed newsletter wording and original posters, including source inconsistencies, in accordance with the owner's request for no review comments.
 
 ## Performance
 
-- Initial JavaScript: **18.6 KiB gzip**. CSS: **5.8 KiB gzip**.
-- The newsletter parser is excluded from the normal app download.
-- Three local cold-load trials at 4x CPU slowdown, 1.6 Mbps download and 150ms network latency measured home LCP at **832, 844 and 844ms**, with CLS **0**.
-- The second full screenshot pass measured mobile LCP from **812 to 844ms**, with scrolling at **60 to 61fps**.
-- Static metadata audit: **0 FAIL, 0 WARN**.
+- Initial JavaScript: 20.3 KiB gzip. CSS: 6.2 KiB gzip.
+- The newsletter parser remains outside the normal app download.
+- All 19 WebP previews total approximately 1.03 MiB. The first preview loads eagerly with high priority; the others load lazily. Original posters are separate files.
+- A local cold-load check with 4x CPU slowdown, 1.6 Mbps download and 150ms latency measured Home LCP at 1,608ms and Events LCP at 1,780ms. CLS was below 0.001 on Home and zero on Events.
+- The static audit estimates the heaviest complete page at approximately 1,094 KB, including all preview images.
 
-These are local laboratory measurements, not field performance guarantees. GitHub Actions repeats the build, logic checks and browser suite on each push; the private-file test is skipped in CI. Runtime dependencies passed the initial release audit; the architecture guide records the outstanding upstream development-tool advisory.
+These are local laboratory measurements, not field performance guarantees. GitHub Actions repeats the build, logic checks and browser suite on each push.

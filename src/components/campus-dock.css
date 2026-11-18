@@ -21,6 +21,17 @@
 .dock-secondary {
   min-width: 0;
 }
+.dock-catalogue-layout {
+  display: block;
+  margin-bottom: 24px;
+}
+.dock-catalogue-layout .dock-primary {
+  max-width: 548px;
+}
+.dock-catalogue > .dock-section-heading h2 {
+  font-size: 24px;
+  letter-spacing: -0.6px;
+}
 .dock-context {
   display: flex;
   justify-content: space-between;
@@ -271,6 +282,10 @@
   }
   .dock-overview {
     gap: 12px;
+  }
+  .dock-catalogue-layout {
+    gap: 8px;
+    margin-bottom: 20px;
   }
   .home-page {
     max-width: 650px;

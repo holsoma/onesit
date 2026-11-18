@@ -1,0 +1,254 @@
+[
+  {
+    "id": "internal",
+    "title": "Internal events",
+    "entries": [
+      {
+        "id": "newsletter-01",
+        "title": "Jubilance IV: A Hero’s Adventure",
+        "organiser": "SIT Symphonique",
+        "summary": "Join SIT Symphonique for its annual concert celebrating music, friendship and adventure. Tickets are $5 with free seating.",
+        "when": "8 November 2026, 5pm to 6.30pm",
+        "where": "Ho Bee Auditorium, Block E3, Level 2, SIT Punggol",
+        "poster": "/newsletters/whats-happening-2026/01-original.png",
+        "preview": "/newsletters/whats-happening-2026/01-preview.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "newsletter-02",
+        "title": "CBS × AXS: Beyond the Rating",
+        "organiser": "SIT IAC, Credit Bureau Singapore and AXS",
+        "summary": "Learn how to understand your credit report, build healthy credit habits and manage bill payments. Includes a participation certificate and $5 off your first bill payment with AXS.",
+        "when": "30 October 2026, 4.30pm to 6.30pm",
+        "where": "SIT Punggol, Campus Court, Lectorial 7, E2-01-02",
+        "poster": "/newsletters/whats-happening-2026/02-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/02-preview.webp",
+        "width": 439,
+        "height": 431
+      },
+      {
+        "id": "newsletter-03",
+        "title": "Singapore Comic Con (SGCC) 2026",
+        "organiser": "SIT Rotaract and SIT Red Cross Youth",
+        "summary": "Support Singapore Red Cross fundraising, queues, public engagement, photography and booths. Volunteers can indicate available shifts.",
+        "when": "4 December 2026, 4pm to 10pm; 5 and 6 December, 8.30am to 9pm",
+        "where": "Marina Bay Sands",
+        "poster": "/newsletters/whats-happening-2026/03-original.png",
+        "preview": "/newsletters/whats-happening-2026/03-preview.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "newsletter-04",
+        "title": "HackRift 2026",
+        "organiser": "SITech Developers Club",
+        "summary": "Teams of three to five, with solo sign-ups matched to a team. Prizes of $1,000, $500 and $250, plus food on in-person days.",
+        "when": "7 to 11 December 2026; 10am to 5pm on in-person days. Registration closes 1 November 2026.",
+        "where": "",
+        "poster": "/newsletters/whats-happening-2026/04-original.png",
+        "preview": "/newsletters/whats-happening-2026/04-preview.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "newsletter-05",
+        "title": "Guiding Pathway to Success (GPS 2026)",
+        "organiser": "SWE@SIT",
+        "summary": "CV writing, elevator pitches, company booths, networking lunch and speed mentoring with industry professionals. Open to all SIT students.",
+        "when": "7 November 2026, 10am to 3pm",
+        "where": "SIT Punggol, E2-01-07, Lectorial 7, Level 1",
+        "poster": "/newsletters/whats-happening-2026/05-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/05-preview.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "newsletter-06",
+        "title": "Gardens by the Bay Visit",
+        "organiser": "International Students Network (ISN)",
+        "summary": "Free group visit for all SIT students, with photo and garden activities. Places are first come, first served.",
+        "when": "Saturday, 5 December 2026",
+        "where": "Gardens by the Bay",
+        "poster": "/newsletters/whats-happening-2026/06-original.png",
+        "preview": "/newsletters/whats-happening-2026/06-preview.webp",
+        "width": 720,
+        "height": 720
+      },
+      {
+        "id": "newsletter-07",
+        "title": "World Radiography Day 2026",
+        "organiser": "SIT Diagnostic Radiography and Radiation Therapy Student Management Committee",
+        "summary": "Celebrating ten years of radiography, with a photobooth, industry booths, merchandise, caricatures and a lucky draw for DRRT students.",
+        "when": "6 November 2026, 2pm to 5pm",
+        "where": "The Forum, Campus Heart, W1, Level 1",
+        "poster": "/newsletters/whats-happening-2026/07-original.png",
+        "preview": "/newsletters/whats-happening-2026/07-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-08",
+        "title": "Deepfakes & Scams: Staying Safe in the AI Age",
+        "organiser": "10th Joint University Webinar, featuring SPF speaker Tay Yuanqi",
+        "summary": "How AI-enabled scams work, how authorities respond and how individuals can protect themselves.",
+        "when": "26 October 2026, 7.30pm to 9pm. Registration closes 23 October 2026.",
+        "where": "Zoom",
+        "poster": "/newsletters/whats-happening-2026/08-original.png",
+        "preview": "/newsletters/whats-happening-2026/08-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-09",
+        "title": "Postcards from Punggol photography contest",
+        "organiser": "SIT Corporate Communications Division",
+        "summary": "Submit a campus photograph with a caption of up to 50 words. Win shopping vouchers worth $500, $300 or $100.",
+        "when": "Entries close 30 October",
+        "where": "",
+        "poster": "/newsletters/whats-happening-2026/09-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/09-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-10",
+        "title": "SIT Speaker Series: From Waste to Worth",
+        "organiser": "SIT Community Engagement Division",
+        "summary": "Join Associate Professor Mark Teo and Russell Nathan to explore food waste, food resilience and practical actions for individuals and communities. Take part in a food-preservation exercise.",
+        "when": "14 November 2026, 10am to 11.30am",
+        "where": "Lounge@Forum, Campus Heart, W1, Level 2",
+        "poster": "/newsletters/whats-happening-2026/10-original.png",
+        "preview": "/newsletters/whats-happening-2026/10-preview.webp",
+        "width": 562,
+        "height": 720
+      }
+    ]
+  },
+  {
+    "id": "sitequests",
+    "title": "SITeQuests",
+    "entries": [
+      {
+        "id": "newsletter-11",
+        "title": "Mastering the Art of Dining",
+        "organiser": "SITeQuest, in partnership with FranklinCovey",
+        "summary": "The 7 Habits of Highly Effective People offers a framework for setting priorities, aligning personal goals, managing commitments and communicating with others. Sign up on IN4SIT using activity code 0000004686. Fee: $10.",
+        "when": "Saturday, 7 November 2026, 9am to 6pm",
+        "where": "Alumni Base Station, Block E6, Level 4",
+        "poster": "/newsletters/whats-happening-2026/11-original.png",
+        "preview": "/newsletters/whats-happening-2026/11-preview.webp",
+        "width": 720,
+        "height": 720
+      }
+    ]
+  },
+  {
+    "id": "external",
+    "title": "External events",
+    "entries": [
+      {
+        "id": "newsletter-12",
+        "title": "Your Career, Your Say",
+        "organiser": "Inter-University Network (IUN)",
+        "summary": "A student survey about career pressure, portfolio building, competition and support. A $5 Grab gift voucher is offered while supplies last.",
+        "when": "Closes 31 October 2026; approximately 10 minutes to complete",
+        "where": "Online",
+        "poster": "/newsletters/whats-happening-2026/12-original.png",
+        "preview": "/newsletters/whats-happening-2026/12-preview.webp",
+        "width": 509,
+        "height": 720
+      },
+      {
+        "id": "newsletter-13",
+        "title": "Shape the Future of Robotics: Robotics & You",
+        "organiser": "Infocomm Media Development Authority (IMDA)",
+        "summary": "Views on robotics, including acceptance, future applications and careers. Open to SIT undergraduate and postgraduate students.",
+        "when": "Open until 9 November; approximately 8 minutes to complete",
+        "where": "Online",
+        "poster": "/newsletters/whats-happening-2026/13-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/13-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-14",
+        "title": "SkillsFuture Festival 2026 @ North East",
+        "organiser": "SkillsFuture Festival @ North East",
+        "summary": "Career guidance, AI and robotics showcases, more than 15 employers, local businesses and a Community AI Literacy Workshop on 28 October.",
+        "when": "27 and 28 October 2026, 10am to 5pm",
+        "where": "Our Tampines Hub, Levels 1 and 2",
+        "poster": "/newsletters/whats-happening-2026/14-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/14-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-15",
+        "title": "Clean & Green Quest 2026",
+        "organiser": "National Environment Agency / Clean & Green Singapore",
+        "summary": "Teams of four complete environmental and community challenges. Limited to 25 teams; prizes are sponsored by Gain City.",
+        "when": "21 November 2026, 7.30am to 11am",
+        "where": "Starts at Woodlands Galaxy Community Club, with checkpoints around Kampung Admiralty",
+        "poster": "/newsletters/whats-happening-2026/15-original.png",
+        "preview": "/newsletters/whats-happening-2026/15-preview.webp",
+        "width": 413,
+        "height": 720
+      },
+      {
+        "id": "newsletter-16",
+        "title": "Housing Journey Youth Panel",
+        "organiser": "Housing & Development Board (HDB)",
+        "summary": "For people aged 18 to 35. Dialogues and learning journeys about housing information, support and the flat-purchase experience.",
+        "when": "January to September 2027",
+        "where": "",
+        "poster": "/newsletters/whats-happening-2026/16-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/16-preview.webp",
+        "width": 540,
+        "height": 720
+      },
+      {
+        "id": "newsletter-17",
+        "title": "10 Dimensions of Wellness Series",
+        "organiser": "Total Wellness Initiative Singapore with the Lim Hoon Foundation",
+        "summary": "Explore wellbeing through crafts, panels, games and other activities. Student-community tickets are $5 using the code TWISFAMILY.",
+        "when": "Seven Saturdays",
+        "where": "",
+        "poster": "/newsletters/whats-happening-2026/17-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/17-preview.webp",
+        "width": 576,
+        "height": 720
+      },
+      {
+        "id": "newsletter-18",
+        "title": "17th Young Hospitality Summit (YHS) 2027",
+        "organiser": "Young Hospitality Summit, EHL Hospitality Business School",
+        "summary": "For students in the final or second-to-last year of a bachelor’s degree who can communicate in written and spoken English. Connect with hospitality professionals, develop practical skills and exchange ideas with fellow students.",
+        "when": "Summit: 15 to 17 March 2027. Online information sessions: 6 and 13 November 2026 at 9am or 4pm CET.",
+        "where": "Lausanne, Switzerland; information sessions online",
+        "poster": "/newsletters/whats-happening-2026/18-original.png",
+        "preview": "/newsletters/whats-happening-2026/18-preview.webp",
+        "width": 720,
+        "height": 703
+      }
+    ]
+  },
+  {
+    "id": "announcements",
+    "title": "Announcements",
+    "entries": [
+      {
+        "id": "newsletter-19",
+        "title": "SIT Sustainability Report 2026",
+        "organiser": "SIT Estates Division",
+        "summary": "Discover SIT’s sustainability journey, progress and priorities through its first sustainability report, covering education, applied research and the Punggol campus.",
+        "when": "",
+        "where": "",
+        "poster": "/newsletters/whats-happening-2026/19-original.jpg",
+        "preview": "/newsletters/whats-happening-2026/19-preview.webp",
+        "width": 720,
+        "height": 306
+      }
+    ]
+  }
+]

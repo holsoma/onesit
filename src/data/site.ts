@@ -17,7 +17,7 @@ export const pageMeta: Record<string, { title: string; description: string }> =
     "/events": {
       title: "What’s Happening",
       description:
-        "Reviewed events and activities for the SIT community, with dates and source links.",
+        "The What’s Happening newsletter catalogue, with internal and external events, SITeQuests, announcements and posters.",
     },
     "/more": {
       title: "Your OneSIT",
