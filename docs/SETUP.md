@@ -16,6 +16,8 @@ Set `VITE_SITE_URL` to a different production origin before building a fork, so 
 
 `vercel.json` sets caching and restrictive security headers. Hashed assets have a one-year immutable browser cache. Pages use the platform's normal static-file handling. The newsletter tool needs same-origin workers and local blob images, not a remote upload endpoint.
 
+Bus estimates use the public ArriveLah endpoint. No API key is required. The content security policy permits connections to `https://arrivelah2.busrouter.sg`; see [Transport data](TRANSPORT.md) for refresh behaviour and source limitations.
+
 ## Testing
 
 ```sh
@@ -27,6 +29,8 @@ npx playwright test
 ```
 
 The private newsletter integration test is skipped by default. To run it locally, set `ONESIT_PRIVATE_MSG_DIR` to the directory containing your downloaded .msg file. The file is read directly and is not copied into the project.
+
+Set `PLAYWRIGHT_BASE_URL` when testing a preview on a different port. Transport browser tests intercept the bus API with synthetic responses; CI does not depend on live transport data.
 
 ## Android later
 

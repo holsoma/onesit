@@ -3,7 +3,7 @@ import { gzipSync } from "node:zlib";
 const origin = (
   process.env.VITE_SITE_URL || "https://onesit.vercel.app"
 ).replace(/\/$/, "");
-const routes = ["/", "/services", "/events", "/more", "/about", "/coming-soon"];
+const routes = ["/", "/services", "/transport", "/events", "/more", "/about", "/coming-soon"];
 await fs.writeFile(
   "dist/robots.txt",
   `User-agent: *\nAllow: /\nDisallow: /tools/\nSitemap: ${origin}/sitemap.xml\n`,
@@ -15,17 +15,30 @@ await fs.writeFile(
 if (await fs.stat("dist/404/index.html").catch(() => null))
   await fs.copyFile("dist/404/index.html", "dist/404.html");
 const files = await fs.readdir("dist", { recursive: true });
+const manifest = JSON.parse(
+  await fs.readFile("dist/.vite/manifest.json", "utf8"),
+);
+const routeChunks = {
+  "transport/index.html": "src/pages/Transport.tsx",
+};
 for (const file of files.filter((f) => f.endsWith(".html"))) {
   const path = `dist/${file}`;
   let html = await fs.readFile(path, "utf8");
   html = html
     .replaceAll("https://onesit.vercel.app/og.png", origin + "/og.png")
     .replace(/(<img\b[^>]*?\s)alt(?=[\s>])/g, '$1alt=""');
+  const chunkKey = routeChunks[file.replaceAll("\\", "/")];
+  if (chunkKey) {
+    const chunk = manifest[chunkKey];
+    if (!chunk) throw new Error(`Missing route chunk: ${chunkKey}`);
+    const links = [
+      ...(chunk.css || []).map(css => `<link rel="stylesheet" crossorigin href="/${css}">`),
+      `<link rel="modulepreload" crossorigin href="/${chunk.file}">`,
+    ];
+    html = html.replace("</head>", links.join("") + "</head>");
+  }
   await fs.writeFile(path, html);
 }
-const manifest = JSON.parse(
-  await fs.readFile("dist/.vite/manifest.json", "utf8"),
-);
 const entry = Object.values(manifest).find((e) => e.isEntry);
 const seen = new Set();
 let js = 0,

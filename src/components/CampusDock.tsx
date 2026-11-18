@@ -123,8 +123,8 @@ export function CampusDock({
                         <a
                           class="dock-shortcut"
                           href={service.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
+                          target={service.url?.startsWith("/") ? undefined : "_blank"}
+                          rel={service.url?.startsWith("/") ? undefined : "noopener noreferrer"}
                         >
                           <img
                             src={`/services/${service.icon}.svg`}
@@ -133,7 +133,7 @@ export function CampusDock({
                             height="56"
                           />
                           <span>{service.name}</span>
-                          <span class="sr-only"> Opens in a new tab</span>
+                          {!service.url?.startsWith("/") && <span class="sr-only"> Opens in a new tab</span>}
                         </a>
                       </li>
                     ),
@@ -171,7 +171,7 @@ export function CampusDock({
         <a class="dock-coming-soon" href="/coming-soon">
           <span>More services coming soon</span>
           <span class="dock-future-icons" aria-hidden="true">
-            {["cates", "transport", "health"].map((icon) => (
+            {["cates", "facilities", "health"].map((icon) => (
               <img
                 key={icon}
                 src={`/services/${icon}.svg`}

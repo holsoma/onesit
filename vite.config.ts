@@ -8,6 +8,7 @@ export default defineConfig({
         renderTarget: "#app",
         additionalPrerenderRoutes: [
           "/services",
+          "/transport",
           "/events",
           "/more",
           "/about",

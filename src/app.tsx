@@ -40,6 +40,7 @@ import "./components/campus-dock.css";
 import "./transitions.css";
 
 const Newsletter = lazy(() => import("./pages/Newsletter"));
+const Transport = lazy(() => import("./pages/Transport"));
 const AppContext = createContext<{
   preferences: Preferences;
   update: (p: Preferences) => void;
@@ -70,6 +71,7 @@ function Navigation() {
           href={item.href}
           class={
             path === item.href ||
+            (item.href === "/services" && path === "/transport") ||
             (item.href === "/more" &&
               ["/about", "/coming-soon", "/tools/newsletter"].includes(path))
               ? "active"
@@ -183,6 +185,7 @@ function Shell() {
               <Router>
                 <Route path="/" component={Home} />
                 <Route path="/services" component={Services} />
+                <Route path="/transport" component={Transport} />
                 <Route path="/events" component={Events} />
                 <Route path="/more" component={More} />
                 <Route path="/about" component={About} />
@@ -334,7 +337,7 @@ function Services() {
         </div>
       )}
       <p class="help-note">
-        School services open in a new tab. Sign in on the service’s own website.
+        External services open in a new tab. Sign in on the service’s own website.
       </p>
     </div>
   );
@@ -592,7 +595,8 @@ function About() {
       <p class="help-note">
         School websites and third-party services have their own terms and
         privacy policies. OneSIT stores personal settings in your browser and
-        does not collect your school credentials.
+        does not collect your school credentials. The transport screen requests
+        bus estimates from ArriveLah.
       </p>
     </div>
   );

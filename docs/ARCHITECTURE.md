@@ -2,13 +2,15 @@
 
 ## Application
 
-Preact renders a shared shell and routes with preact-iso. Vite prerenders every public page. All service information is local to the build. There is no database, backend function or authenticated API.
+Preact renders a shared shell and routes with preact-iso. Vite prerenders every public page. The service directory is local to the build; the transport page requests bus estimates from ArriveLah in the browser. There is no database, backend function or authenticated API.
 
-Primary screens share a small bundle. The newsletter editor is a separate dynamic import. Its parser runs in a worker and never loads on ordinary app pages. The build enforces an initial JavaScript budget of 60 KiB gzip and a CSS budget of 15 KiB gzip, including static imports. The generated `dist/bundle-report.json` records measured bytes.
+Primary screens share a small bundle. Transport and the newsletter editor are separate dynamic imports. The newsletter parser runs in a worker and never loads on ordinary app pages. The build enforces an initial JavaScript budget of 60 KiB gzip and a CSS budget of 15 KiB gzip, including static imports. The generated `dist/bundle-report.json` records measured bytes.
+
+The build adds the transport chunk's stylesheet and module preload to `/transport` HTML only. This prevents delayed route styling without increasing Home's downloads. The browser requests bus data only while the Bus arrivals panel is visible; see [Transport data](TRANSPORT.md).
 
 ## Public records
 
-- Services: stable ID, label, description, category, status, local icon and an optional external URL. Only available entries expose links and favourite controls.
+- Services: stable ID, label, description, category, status, local icon and an optional destination. Internal routes stay in OneSIT; external links open separately. Only available entries expose links and favourite controls.
 - Academic terms: published start and end dates, year and trimester number. The source and verification date are kept beside the records.
 - Catalogue: section ID and title, then entries with stable IDs, titles, summaries, organisers, displayed dates and venues, local poster paths, preview paths, image dimensions and labelled external actions. Home and Events render the same `src/data/catalogue.json` records in newsletter order. Past entries remain part of the issue. Registration and other action URLs come from the newsletter or decoded poster QR codes.
 - Newsletter review exports: dated event summaries with timezones, source URLs and optional registration deadlines. These are a separate format used by the local review tool, not the displayed catalogue.

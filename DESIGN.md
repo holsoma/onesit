@@ -49,7 +49,7 @@ Wednesday, 18 November          Week 12
 
 Your shortcuts                     Edit
 IN4SIT       xSiTe      RBS     Campus Map
-All services                 7 available
+All services                 8 available
 
 What’s Happening
 [Internal] [SITeQuests] [External] [Announcements]
@@ -68,6 +68,8 @@ Desktop keeps the same reading order. Home and Events share the full newsletter 
 The newsletter section links form one compact control, with a pale grey background and white buttons. Use four columns on wide screens and two on phones, with at least 46px touch height. Entry counts appear beside the labels when space permits. Hover and keyboard focus use the red accent. Keep the links free of underlines and avoid adding a second divider below the section title.
 
 Each catalogue item ends with an outlined red action button for its registration or other source link, recovered from the newsletter or poster QR code. Use a destination-specific label and an external-link icon. Buttons are at least 44px high and open in a new tab. Preserve the original poster action separately on the image.
+
+Transport is a separate page with Bus arrivals and MRT timings tabs. Show the next three available bus estimates per service, with explicit Scheduled or Estimated labels. Preserve missing-data and offline states. Bus data stops refreshing when the page is hidden, when the MRT tab is selected, or after navigation. The owner chose official first/last MRT train times because routine live train predictions are not available from the chosen public sources. Do not invent a countdown from train frequencies.
 
 ## Content and assumptions
 

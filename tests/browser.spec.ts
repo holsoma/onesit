@@ -281,7 +281,7 @@ test("newsletter uses inert text and exports only reviewed fields", async ({
   expect(exported[0].recipients).toBeUndefined();
   expect(exported[0].title).toBe("Test event");
 });
-test("supplied newsletter is read entirely locally", async ({ page }) => {
+test("supplied newsletter is read entirely locally", async ({ page, baseURL }) => {
   const directory = process.env.ONESIT_PRIVATE_MSG_DIR;
   test.skip(
     !directory,
@@ -294,7 +294,7 @@ test("supplied newsletter is read entirely locally", async ({ page }) => {
   const external: string[] = [];
   page.on("request", (request) => {
     if (
-      !request.url().startsWith("http://127.0.0.1:4400") &&
+      !request.url().startsWith(new URL(baseURL!).origin) &&
       !request.url().startsWith("blob:")
     )
       external.push(request.url());

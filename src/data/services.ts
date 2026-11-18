@@ -92,9 +92,10 @@ export const services: Service[] = [
   {
     id: "transport",
     name: "Punggol transport",
-    description: "Train & bus arrival times",
+    description: "Bus arrivals & MRT operating hours",
     category: "Campus",
-    status: "soon",
+    status: "available",
+    url: "/transport",
     icon: "transport",
   },
   {

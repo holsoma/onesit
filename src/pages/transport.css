@@ -1,0 +1,65 @@
+.transport-page { max-width: 760px; }
+.transport-page .page-heading { margin-bottom: 24px; }
+.transport-tabs { display: grid; grid-template-columns: 1fr 1fr; gap: 5px; padding: 5px; border-radius: 12px; background: #eae8ed; margin-bottom: 30px; }
+.transport-tabs button { display: flex; align-items: center; justify-content: center; gap: 9px; min-height: 46px; padding: 10px; border-radius: 8px; background: transparent; color: var(--muted); font-size: 14px; font-weight: 600; transition: background 160ms, color 160ms; }
+.transport-tabs button[aria-selected="true"] { background: var(--surface); color: var(--red); }
+.transport-stop { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.transport-code { display: block; font-size: 12px; color: var(--muted); margin-bottom: 6px; }
+.transport-stop h2 { font-size: 20px; }
+.transport-stop p, .mrt-heading p { margin-top: 5px; font-size: 13px; color: var(--muted); }
+.transport-refresh { flex-shrink: 0; min-width: 114px; }
+.transport-refresh:disabled { opacity: .65; cursor: wait; }
+.transport-update { color: var(--muted); font-size: 12px; min-height: 18px; margin: 16px 0 12px; font-variant-numeric: tabular-nums; }
+.transport-notice { padding: 14px 16px; margin: 16px 0; border-left: 3px solid var(--red); background: var(--red-soft); font-size: 14px; line-height: 1.6; }
+.bus-board { border-top: 1px solid var(--line); }
+.bus-row { padding: 18px 0; border-bottom: 1px solid var(--line); }
+.bus-route-heading { display: flex; align-items: center; gap: 14px; }
+.bus-route-heading h3 { display: flex; align-items: center; justify-content: center; min-width: 58px; min-height: 40px; padding: 4px 9px; border-radius: 9px; background: var(--ink); color: white; font-size: 19px; font-weight: 650; font-variant-numeric: tabular-nums; letter-spacing: -.3px; }
+.bus-route-heading a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; color: var(--muted); font-size: 13px; line-height: 1.5; text-decoration: underline; text-underline-offset: 4px; }
+.bus-route-heading a svg { width: 13px; height: 13px; transition: transform 160ms var(--ease); }
+.bus-times { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 16px; padding: 0 0 0 72px; list-style: none; margin: 10px 0 0; }
+.bus-times li { display: flex; flex-direction: column; gap: 3px; }
+.bus-order, .bus-basis { font-size: 11px; color: var(--muted); }
+.bus-times strong { font-size: 22px; line-height: 1.35; letter-spacing: -.6px; font-weight: 650; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.bus-times li:first-child strong { color: var(--red); }
+.bus-no-times { margin: 8px 0 0 72px; color: var(--muted); font-size: 13px; min-height: 32px; display: flex; align-items: center; }
+.transport-help { margin-top: 20px; color: var(--muted); font-size: 13px; line-height: 1.7; }
+.transport-source { margin-top: 16px; color: var(--muted); font-size: 12px; line-height: 1.7; }
+.transport-source a { text-decoration: underline; text-underline-offset: 3px; }
+.mrt-heading { display: flex; align-items: center; gap: 14px; }
+.mrt-heading h2 { font-size: 22px; }
+.mrt-code { display: inline-flex; align-items: center; min-height: 40px; padding: 6px 10px; border-radius: 9px; background: #8838a5; color: white; font-weight: 650; font-size: 15px; }
+.mrt-timetable { margin-top: 28px; }
+.mrt-timetable h3 { margin-bottom: 18px; }
+.mrt-timetable table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.mrt-timetable th, .mrt-timetable td { text-align: left; padding: 17px 12px; border-bottom: 1px solid var(--line); }
+.mrt-timetable th:first-child { padding-left: 0; }
+.mrt-timetable thead th { font-size: 12px; font-weight: 500; color: var(--muted); }
+.mrt-timetable tbody th { font-weight: 500; }
+.mrt-timetable td { font-weight: 650; font-variant-numeric: tabular-nums; }
+.transport-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 22px; }
+@media (min-width: 1101px) {
+  .bus-row { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); align-items: center; gap: 24px; min-height: 112px; }
+  .bus-times { padding-left: 0; margin-top: 0; }
+  .bus-no-times { margin: 0; }
+}
+@media (hover: hover) {
+  .transport-tabs button:hover { background: var(--surface); }
+  .bus-route-heading a:hover svg { transform: translate(1px,-1px); }
+  .transport-source a:hover { color: var(--red); }
+}
+@media (max-width: 720px) {
+  .transport-page .page-heading h1 { font-size: 30px; }
+  .transport-stop { align-items: flex-start; gap: 10px; }
+  .transport-stop h2 { max-width: 230px; font-size: 18px; }
+  .transport-refresh { min-width: 44px; padding: 10px 12px; font-size: 12px; gap: 6px; }
+  .bus-times { padding-left: 0; margin-top: 13px; }
+  .bus-no-times { margin-left: 0; }
+  .mrt-timetable th, .mrt-timetable td { padding-inline: 8px; }
+  .mrt-timetable tbody th { width: 50%; }
+  .mrt-heading p { font-size: 12px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .transport-tabs button, .bus-route-heading a svg { transition: none; }
+  .bus-route-heading a:hover svg { transform: none; }
+}

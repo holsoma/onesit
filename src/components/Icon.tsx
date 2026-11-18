@@ -1,5 +1,8 @@
 import type { SVGAttributes } from "preact";
 const paths: Record<string, string> = {
+  refresh: "M20 7v5h-5m5 0a8 8 0 1 0-2 6M20 12l-3-4",
+  bus: "M5 17h14V5a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v12zm0-7h14M8 14h1m6 0h1M7 17v3m10-3v3",
+  mrt: "M6 16h12V5a3 3 0 0 0-3-3H9a3 3 0 0 0-3 3v11zm0-7h12M9 13h.01M15 13h.01M8 16l-3 6m11-6 3 6M7 20h10",
   home: "m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7H9v7H4a1 1 0 0 1-1-1z",
   grid: "M3 3h7v7H3zM14 3h7v7h-7zM3 14h7v7H3zM14 14h7v7h-7z",
   calendar:

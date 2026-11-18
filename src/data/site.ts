@@ -19,6 +19,10 @@ export const pageMeta: Record<string, { title: string; description: string }> =
       description:
         "The What’s Happening newsletter catalogue, with internal and external events, SITeQuests, announcements and posters.",
     },
+    "/transport": {
+      title: "Punggol transport",
+      description: "Bus arrival estimates at Punggol Coast Interchange and official first and last MRT train times towards HarbourFront.",
+    },
     "/more": {
       title: "Your OneSIT",
       description:
@@ -32,7 +36,7 @@ export const pageMeta: Record<string, { title: string; description: string }> =
     "/coming-soon": {
       title: "Coming soon",
       description:
-        "Food ordering, transport, healthcare, campus facilities and more on the OneSIT roadmap.",
+        "Food ordering, healthcare, campus facilities and more on the OneSIT roadmap.",
     },
     "/tools/newsletter": {
       title: "Newsletter review",

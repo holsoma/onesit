@@ -12,6 +12,7 @@ export function ServiceCard({
   compact?: boolean;
 }) {
   const soon = service.status === "soon";
+  const internal = service.url?.startsWith("/");
   const content = (
     <>
       <img
@@ -27,7 +28,7 @@ export function ServiceCard({
         {!compact && <p>{service.description}</p>}
         {soon && <span class="soon-label">Coming soon</span>}
       </div>
-      {!soon && <Icon name="external" class="external-icon" />}
+      {!soon && <Icon name={internal ? "arrow" : "external"} class="external-icon" />}
     </>
   );
   return (
@@ -42,11 +43,11 @@ export function ServiceCard({
         <a
           class="service-body"
           href={service.url}
-          target="_blank"
-          rel="noopener noreferrer"
+          target={internal ? undefined : "_blank"}
+          rel={internal ? undefined : "noopener noreferrer"}
         >
           {content}
-          <span class="sr-only"> Opens in a new tab</span>
+          {!internal && <span class="sr-only"> Opens in a new tab</span>}
         </a>
       )}
       {!soon && !compact && onToggle && (
