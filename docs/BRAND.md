@@ -24,11 +24,9 @@ Do not add a separate independence statement to this notice.
 
 > OneSIT brings campus services, academic dates and student events into one place.
 >
-> An open-source, student-led app piloted by a member of SIT Vanguard. Its wordmark pays homage to SIT Vanguard.
->
 > Not affiliated with SIT.
 
-The member's involvement is a personal contribution. Do not describe OneSIT as an official Vanguard initiative or imply organisational endorsement.
+The owner removed the Vanguard attribution section from About. Keep the app introduction and open-source contribution section. Do not describe OneSIT as an official Vanguard initiative or imply organisational endorsement.
 
 ## Wordmark construction
 

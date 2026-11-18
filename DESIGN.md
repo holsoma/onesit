@@ -63,7 +63,7 @@ Not affiliated with SIT.    About OneSIT
 Home       Services       Events    More
 ```
 
-Desktop keeps the same reading order. Home and Events share the full newsletter catalogue. Section links jump to Internal events, SITeQuests, External events and Announcements. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the Vanguard credit and exact affiliation notice.
+Desktop keeps the same reading order. Home and Events share the full newsletter catalogue. Section links jump to Internal events, SITeQuests, External events and Announcements. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the app introduction, contribution link and exact affiliation notice. The owner removed the Vanguard attribution section.
 
 The newsletter section links form one compact control, with a pale grey background and white buttons. Use four columns on wide screens and two on phones, with at least 46px touch height. Entry counts appear beside the labels when space permits. Hover and keyboard focus use the red accent. Keep the links free of underlines and avoid adding a second divider below the section title.
 

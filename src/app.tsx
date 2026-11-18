@@ -557,22 +557,6 @@ function About() {
       </p>
       <section class="about-section">
         <span class="about-symbol">
-          <Icon name="flag" />
-        </span>
-        <div>
-          <h2>From a member of SIT Vanguard.</h2>
-          <p>
-            OneSIT is an open-source, student-led app piloted by a member of SIT
-            Vanguard. Its wordmark pays homage to SIT Vanguard.
-          </p>
-          <p>
-            A small initiative to make the everyday parts of student life easier
-            to find.
-          </p>
-        </div>
-      </section>
-      <section class="about-section">
-        <span class="about-symbol">
           <Icon name="code" />
         </span>
         <div>

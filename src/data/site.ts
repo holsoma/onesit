@@ -31,7 +31,7 @@ export const pageMeta: Record<string, { title: string; description: string }> =
     "/about": {
       title: "About OneSIT",
       description:
-        "An open-source, student-led app piloted by a member of SIT Vanguard. Not affiliated with SIT.",
+        "An open-source companion for campus services, academic dates and student events. Not affiliated with SIT.",
     },
     "/coming-soon": {
       title: "Coming soon",
