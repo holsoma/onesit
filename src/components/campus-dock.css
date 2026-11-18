@@ -32,6 +32,10 @@
   font-size: 24px;
   letter-spacing: -0.6px;
 }
+.dock-catalogue > .dock-section-heading {
+  min-height: 34px;
+  margin-bottom: 12px;
+}
 .dock-context {
   display: flex;
   justify-content: space-between;

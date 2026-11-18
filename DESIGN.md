@@ -65,6 +65,8 @@ Home       Services       Events    More
 
 Desktop keeps the same reading order. Home and Events share the full newsletter catalogue. Section links jump to Internal events, SITeQuests, External events and Announcements. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the Vanguard credit and exact affiliation notice.
 
+The newsletter section links form one compact control, with a pale grey background and white buttons. Use four columns on wide screens and two on phones, with at least 46px touch height. Entry counts appear beside the labels when space permits. Hover and keyboard focus use the red accent. Keep the links free of underlines and avoid adding a second divider below the section title.
+
 ## Content and assumptions
 
 The owner approved publishing the reviewed 19-entry catalogue and its posters. Home and Events retain the newsletter's section order, including past entries, surveys and the report announcement. The first smaller WebP preview loads eagerly and the remaining previews load lazily. Selecting an image opens the original in a new tab. No separate poster links or reviewer comments appear. Raw email and recipient information remain excluded.

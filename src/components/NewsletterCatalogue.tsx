@@ -9,8 +9,15 @@ export function NewsletterCatalogue({ nested = false }: { nested?: boolean }) {
     <div class="newsletter-catalogue">
       <nav class="catalogue-sections" aria-label="Newsletter sections">
         {catalogue.map((section) => (
-          <a key={section.id} href={`#catalogue-${section.id}`}>
-            {section.title}
+          <a
+            key={section.id}
+            href={`#catalogue-${section.id}`}
+            aria-label={section.title}
+          >
+            <span>{section.title}</span>
+            <span class="catalogue-section-count" aria-hidden="true">
+              {section.entries.length}
+            </span>
           </a>
         ))}
       </nav>
