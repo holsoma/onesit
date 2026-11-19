@@ -168,6 +168,7 @@ test("Campus Dock handles extra favourites and an empty dock", async ({
   await expect(page.locator(".dock-countdown")).toHaveCount(1);
 });
 test("newsletter catalogue keeps its sections and opens original posters", async ({ page }) => {
+  await page.clock.install({ time: new Date("2026-11-19T12:00:00+08:00") });
   await page.setViewportSize({ width: 390, height: 844 });
   const originals: string[] = [];
   page.on("request", request => {
@@ -175,8 +176,9 @@ test("newsletter catalogue keeps its sections and opens original posters", async
   });
   for (const route of ["/", "/events"]) {
     await page.goto(route);
-    await expect(page.locator(".catalogue-entry")).toHaveCount(19);
-    for (const [section, count] of [["internal", 10], ["sitequests", 1], ["external", 7], ["announcements", 1]] as const) {
+    await expect(page.locator(".catalogue-entry")).toHaveCount(7);
+    await expect(page.locator("#catalogue-sitequests")).toHaveCount(0);
+    for (const [section, count] of [["internal", 2], ["external", 2], ["announcements", 3]] as const) {
       await expect(page.locator(`#catalogue-${section} article`)).toHaveCount(count);
     }
     await page.getByRole("navigation", { name: "Newsletter sections" }).getByRole("link", { name: "External events", exact: true }).click();
@@ -191,15 +193,16 @@ test("newsletter catalogue keeps its sections and opens original posters", async
   await poster.press("Enter");
   const popup = await popupPromise;
   await popup.waitForLoadState();
-  await expect(popup).toHaveURL(/01-original\.png$/);
+  await expect(popup).toHaveURL(/sit-beach-clean-up-original\.jpg$/);
   expect(await popup.locator("img").evaluate((image: HTMLImageElement) => image.complete && image.naturalWidth > 0)).toBe(true);
   await popup.close();
 });
 
 test("catalogue actions retain source URLs and open separately", async ({ page, context }) => {
+  await page.clock.install({ time: new Date("2026-11-19T12:00:00+08:00") });
   await page.setViewportSize({ width: 320, height: 844 });
   await page.goto("/events");
-  await expect(page.locator(".catalogue-action")).toHaveCount(20);
+  await expect(page.locator(".catalogue-action")).toHaveCount(8);
   const entries = await page.locator(".catalogue-entry").evaluateAll(items =>
     items.map(item => [...item.querySelectorAll<HTMLAnchorElement>(".catalogue-action")].map(link => ({
       url: link.href,
@@ -208,15 +211,15 @@ test("catalogue actions retain source URLs and open separately", async ({ page, 
       rel: link.rel,
     }))),
   );
-  expect(entries.every(actions => actions.length > 0)).toBe(true);
+  expect(entries.filter(actions => actions.length === 0)).toHaveLength(1);
   expect(entries.flat().every(action =>
     action.url.startsWith("https://") && action.height >= 44 &&
     action.target === "_blank" && action.rel.includes("noopener"),
   )).toBe(true);
-  await expect(page.getByRole("link", { name: /^Expired survey link:/ })).toHaveCount(1);
-  const link = page.getByRole("link", { name: /^Registration form: Deepfakes/ });
+  await expect(page.getByRole("link", { name: /^Expired survey link:/ })).toHaveCount(0);
+  const link = page.getByRole("link", { name: /^Registration form: SIT Beach/ });
   const url = (await link.getAttribute("href"))!;
-  expect(url).toMatch(/\/viewform$/);
+  expect(url).toBe("https://sit.au1.qualtrics.com/jfe/form/SV_eniq5z6aRsJzvb8");
   const methods: string[] = [];
   await context.route(url, route => {
     methods.push(route.request().method());
@@ -231,6 +234,18 @@ test("catalogue actions retain source URLs and open separately", async ({ page, 
   expect(await popup.evaluate(() => window.opener === null)).toBe(true);
   expect(methods).toEqual(["GET"]);
   await popup.close();
+});
+
+test("catalogue deadlines update on both pages across Singapore midnight", async ({ page }) => {
+  await page.clock.install({ time: new Date("2026-11-21T23:59:50+08:00") });
+  await page.goto("/events");
+  await expect(page.getByRole("heading", {name:"Grandparents’ Day 2026 at One Punggol"})).toBeVisible();
+  await page.clock.runFor(31000);
+  await expect(page.getByRole("heading", {name:"Grandparents’ Day 2026 at One Punggol"})).toHaveCount(0);
+  await expect(page.locator(".catalogue-entry")).toHaveCount(6);
+  await page.goto("/");
+  await expect(page.locator(".catalogue-entry")).toHaveCount(6);
+  await expect(page.locator("#catalogue-announcements article")).toHaveCount(3);
 });
 
 test("newsletter uses inert text and exports only reviewed fields", async ({

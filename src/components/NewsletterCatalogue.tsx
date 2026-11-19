@@ -1,15 +1,20 @@
 import catalogue from "../data/catalogue.json";
 import { Icon } from "./Icon";
 import "./newsletter-catalogue.css";
+import { currentCatalogue } from "../lib/catalogue";
+import { singaporeDay } from "../lib/dates";
 
-export function NewsletterCatalogue({ nested = false }: { nested?: boolean }) {
+export function NewsletterCatalogue({ nested = false, now }: { nested?: boolean; now?: Date | null }) {
   const SectionHeading = nested ? "h3" : "h2";
   const EntryHeading = nested ? "h4" : "h3";
+  const sections = currentCatalogue(catalogue, singaporeDay(now ?? new Date()));
+
+  if (!sections.length) return <p class="help-note">New entries will appear after the next newsletter update.</p>;
 
   return (
     <div class="newsletter-catalogue">
       <nav class="catalogue-sections" aria-label="Newsletter sections">
-        {catalogue.map((section) => (
+        {sections.map((section) => (
           <a
             key={section.id}
             href={`#catalogue-${section.id}`}
@@ -22,7 +27,7 @@ export function NewsletterCatalogue({ nested = false }: { nested?: boolean }) {
           </a>
         ))}
       </nav>
-      {catalogue.map((section, sectionIndex) => (
+      {sections.map((section, sectionIndex) => (
         <section
           class="catalogue-section"
           id={`catalogue-${section.id}`}

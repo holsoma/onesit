@@ -22,13 +22,13 @@ A mobile website for SIT services, academic dates and student events.
 - The current academic week and one selectable countdown for Final assessment, Trimester break or Recess week, with personal date overrides.
 - An anonymous feedback link below the home shortcuts opens Slido for comments on any topic.
 - Punggol transport shows bus estimates for Punggol Coast Interchange and official first/last MRT train times towards HarbourFront. Bus times refresh every 30 seconds; live MRT countdowns are not available.
-- What’s Happening groups the newsletter into internal events, SITeQuests, external events and announcements, with buttons for registration and other source links. Select a poster to open the original image.
+- What’s Happening groups current entries into internal events, external events and announcements. Known registration deadlines are checked in Singapore time, and Announcements keeps the latest three items. Select a poster to open the original image.
 - Favourites, the countdown choice and personal dates are saved in this browser. OneSIT requires no account; school services handle their own sign-in.
 - A separate newsletter tool reads `.msg` files and embedded images locally, then exports event summaries for review. Catalogue publication is a separate manual step.
 
 Cates, Wholesome, MediHub, campus facilities and useful links are listed as coming soon. Android packaging is planned.
 
-The catalogue includes 19 reviewed entries and their posters. Raw newsletters, email metadata and local review files are excluded from the public repository.
+The catalogue was updated on 19 November 2026 with seven entries and their posters. Older events, including HackRift, were removed. Raw newsletters, email metadata and local review files are excluded from the public repository.
 
 ## Development
 

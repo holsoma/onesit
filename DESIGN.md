@@ -52,7 +52,7 @@ IN4SIT       xSiTe      RBS     Campus Map
 All services                 8 available
 
 What’s Happening
-[Internal] [SITeQuests] [External] [Announcements]
+[Internal] [External] [Announcements]
 Internal events
 [poster opens original]
 title, organiser, summary, date and venue
@@ -63,7 +63,7 @@ Not affiliated with SIT.    About OneSIT
 Home       Services       Events    More
 ```
 
-Desktop keeps the same reading order. Home and Events share the full newsletter catalogue. Section links jump to Internal events, SITeQuests, External events and Announcements. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the app introduction, contribution link and exact affiliation notice. The owner removed the Vanguard attribution section.
+Desktop keeps the same reading order. Home and Events share the current newsletter catalogue. Section links jump to each populated newsletter section; omit empty sections and their links. Services retains its searchable directory. More keeps personal dates and local preferences. About keeps the app introduction, contribution link and exact affiliation notice. The owner removed the Vanguard attribution section.
 
 The newsletter section links form one compact control, with a pale grey background and white buttons. Use four columns on wide screens and two on phones, with at least 46px touch height. Entry counts appear beside the labels when space permits. Hover and keyboard focus use the red accent. Keep the links free of underlines and avoid adding a second divider below the section title.
 
@@ -73,7 +73,9 @@ Transport is a separate page with Bus arrivals and MRT timings tabs. Show the ne
 
 ## Content and assumptions
 
-The owner approved publishing the reviewed 19-entry catalogue and its posters. Home and Events retain the newsletter's section order, including past entries, surveys and the report announcement. The first smaller WebP preview loads eagerly and the remaining previews load lazily. Selecting an image opens the original in a new tab. No separate poster links or reviewer comments appear. Raw email and recipient information remain excluded.
+The owner requested a current catalogue on 19 November 2026, then chose to remove older events, including HackRift. The new issue contributes two internal items, two external events and two promotions. The existing sustainability report remains as the third announcement. Home and Events retain the newsletter's section order. Known registration deadlines and event end dates remove expired entries using Singapore calendar days. A form without a published deadline is not assigned an invented deadline. Announcements shows the newest three by addition date, removing the oldest from view when another is added.
+
+The first smaller WebP preview loads eagerly and the remaining previews load lazily. Selecting an image opens the original in a new tab. No separate poster links or reviewer comments appear. Raw email and recipient information remain excluded. The sidebar location label is exactly “SIT Punggol”.
 
 The visible week and selected countdown use Singapore calendar days. Personal overrides remain supported. Missing published dates show an explicit pending state. Service destinations handle their own sign-in.
 

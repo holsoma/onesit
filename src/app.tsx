@@ -164,7 +164,7 @@ function Shell() {
           <Navigation />
           <div class="rail-bottom">
             <span class="campus-marker">
-              <Icon name="pin" /> SIT, Punggol
+              <Icon name="pin" /> SIT Punggol
             </span>
             <p>{site.affiliation}</p>
             <a href="/about">
@@ -343,10 +343,11 @@ function Services() {
   );
 }
 function Events() {
+  const { now } = useApp();
   return (
     <div class="page catalogue-page">
       <PageHeading title="What’s Happening" />
-      <NewsletterCatalogue />
+      <NewsletterCatalogue now={now} />
     </div>
   );
 }

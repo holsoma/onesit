@@ -4,208 +4,48 @@
     "title": "Internal events",
     "entries": [
       {
-        "id": "newsletter-01",
-        "title": "Jubilance IV: A Hero’s Adventure",
-        "organiser": "SIT Symphonique",
-        "summary": "Join SIT Symphonique for its annual concert celebrating music, friendship and adventure. Tickets are $5 with free seating.",
-        "when": "8 November 2026, 5pm to 6.30pm",
-        "where": "Ho Bee Auditorium, Block E3, Level 2, SIT Punggol",
-        "poster": "/newsletters/whats-happening-2026/01-original.png",
-        "preview": "/newsletters/whats-happening-2026/01-preview.webp",
-        "width": 720,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Ticket form",
-            "url": "https://sit.au1.qualtrics.com/jfe/form/SV_9zwMB6AZohpceoe"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-02",
-        "title": "CBS × AXS: Beyond the Rating",
-        "organiser": "SIT IAC, Credit Bureau Singapore and AXS",
-        "summary": "Learn how to understand your credit report, build healthy credit habits and manage bill payments. Includes a participation certificate and $5 off your first bill payment with AXS.",
-        "when": "30 October 2026, 4.30pm to 6.30pm",
-        "where": "SIT Punggol, Campus Court, Lectorial 7, E2-01-02",
-        "poster": "/newsletters/whats-happening-2026/02-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/02-preview.webp",
-        "width": 439,
-        "height": 431,
+        "id": "sit-beach-clean-up",
+        "title": "SIT Beach Clean-Up at Coney Island",
+        "organiser": "Office of SITizen Experience, SIT",
+        "summary": "Walk from campus to Coney Island with fellow SITizens and help clean the beach. Equipment and refreshments are provided.",
+        "when": "25 November 2026, 3.45pm to 6pm",
+        "where": "Coney Island; walk from SIT Punggol",
+        "endDate": "2026-11-25",
         "actions": [
           {
             "label": "Registration form",
-            "url": "https://forms.cloud.microsoft/r/W4biQtAc0V"
+            "url": "https://sit.au1.qualtrics.com/jfe/form/SV_eniq5z6aRsJzvb8"
           }
-        ]
-      },
-      {
-        "id": "newsletter-03",
-        "title": "Singapore Comic Con (SGCC) 2026",
-        "organiser": "SIT Rotaract and SIT Red Cross Youth",
-        "summary": "Support Singapore Red Cross fundraising, queues, public engagement, photography and booths. Volunteers can indicate available shifts.",
-        "when": "4 December 2026, 4pm to 10pm; 5 and 6 December, 8.30am to 9pm",
-        "where": "Marina Bay Sands",
-        "poster": "/newsletters/whats-happening-2026/03-original.png",
-        "preview": "/newsletters/whats-happening-2026/03-preview.webp",
+        ],
+        "poster": "/newsletters/2026-11-19/sit-beach-clean-up-original.jpg",
+        "preview": "/newsletters/2026-11-19/sit-beach-clean-up-preview.webp",
         "width": 720,
         "height": 720,
-        "actions": [
-          {
-            "label": "Volunteer sign-up",
-            "url": "https://forms.cloud.microsoft/r/LWxSd8V9H2"
-          }
-        ]
+        "addedOn": "2026-11-19"
       },
       {
-        "id": "newsletter-04",
-        "title": "HackRift 2026",
-        "organiser": "SITech Developers Club",
-        "summary": "Teams of three to five, with solo sign-ups matched to a team. Prizes of $1,000, $500 and $250, plus food on in-person days.",
-        "when": "7 to 11 December 2026; 10am to 5pm on in-person days. Registration closes 1 November 2026.",
-        "where": "",
-        "poster": "/newsletters/whats-happening-2026/04-original.png",
-        "preview": "/newsletters/whats-happening-2026/04-preview.webp",
+        "id": "artsitry-feedback-merchandise",
+        "title": "art;SITry feedback and merchandise",
+        "organiser": "Office of SITizen Experience, SIT",
+        "summary": "Share your art;SITry feedback for a chance to receive one of 20 exclusive blind boxes. The merchandise form lists T-shirts, blind boxes and sticker packs.",
+        "when": "",
+        "where": "Online",
+        "actions": [
+          {
+            "label": "Share feedback",
+            "url": "https://sit.au1.qualtrics.com/jfe/form/SV_bDdTvNbcVLpalYG"
+          },
+          {
+            "label": "Pre-order before 30 Nov",
+            "url": "https://sit.au1.qualtrics.com/jfe/form/SV_3OsZC0qB4Ah11Ua",
+            "closesOn": "2026-11-29"
+          }
+        ],
+        "poster": "/newsletters/2026-11-19/artsitry-feedback-merchandise-original.png",
+        "preview": "/newsletters/2026-11-19/artsitry-feedback-merchandise-preview.webp",
         "width": 720,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Registration form",
-            "url": "https://forms.cloud.microsoft/r/0nfuedXgd3"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-05",
-        "title": "Guiding Pathway to Success (GPS 2026)",
-        "organiser": "SWE@SIT",
-        "summary": "CV writing, elevator pitches, company booths, networking lunch and speed mentoring with industry professionals. Open to all SIT students.",
-        "when": "7 November 2026, 10am to 3pm",
-        "where": "SIT Punggol, E2-01-07, Lectorial 7, Level 1",
-        "poster": "/newsletters/whats-happening-2026/05-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/05-preview.webp",
-        "width": 720,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Registration form",
-            "url": "https://forms.cloud.microsoft/r/FZNZW9rcEt"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-06",
-        "title": "Gardens by the Bay Visit",
-        "organiser": "International Students Network (ISN)",
-        "summary": "Free group visit for all SIT students, with photo and garden activities. Places are first come, first served.",
-        "when": "Saturday, 5 December 2026",
-        "where": "Gardens by the Bay",
-        "poster": "/newsletters/whats-happening-2026/06-original.png",
-        "preview": "/newsletters/whats-happening-2026/06-preview.webp",
-        "width": 720,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Sign-up form",
-            "url": "https://forms.cloud.microsoft/Pages/ResponsePage.aspx?id=fx-ZZNZEjE2c1Hhi6MuUxqWqrxod4K5Lih03cxFqiz9UNlVCMjJVQ0FMV0k4R1haWE1CN1FHSjVQRy4u"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-07",
-        "title": "World Radiography Day 2026",
-        "organiser": "SIT Diagnostic Radiography and Radiation Therapy Student Management Committee",
-        "summary": "Celebrating ten years of radiography, with a photobooth, industry booths, merchandise, caricatures and a lucky draw for DRRT students.",
-        "when": "6 November 2026, 2pm to 5pm",
-        "where": "The Forum, Campus Heart, W1, Level 1",
-        "poster": "/newsletters/whats-happening-2026/07-original.png",
-        "preview": "/newsletters/whats-happening-2026/07-preview.webp",
-        "width": 576,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Event updates",
-            "url": "https://www.instagram.com/sitdrrt/"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-08",
-        "title": "Deepfakes & Scams: Staying Safe in the AI Age",
-        "organiser": "10th Joint University Webinar, featuring SPF speaker Tay Yuanqi",
-        "summary": "How AI-enabled scams work, how authorities respond and how individuals can protect themselves.",
-        "when": "26 October 2026, 7.30pm to 9pm. Registration closes 23 October 2026.",
-        "where": "Zoom",
-        "poster": "/newsletters/whats-happening-2026/08-original.png",
-        "preview": "/newsletters/whats-happening-2026/08-preview.webp",
-        "width": 576,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Registration form",
-            "url": "https://docs.google.com/forms/d/e/1FAIpQLSe3YoEV_3Frb44YmyOr4WpnaP0cOleU2w0Kdif98DdhRNlayw/viewform"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-09",
-        "title": "Postcards from Punggol photography contest",
-        "organiser": "SIT Corporate Communications Division",
-        "summary": "Submit a campus photograph with a caption of up to 50 words. Win shopping vouchers worth $500, $300 or $100.",
-        "when": "Entries close 30 October",
-        "where": "",
-        "poster": "/newsletters/whats-happening-2026/09-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/09-preview.webp",
-        "width": 576,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Submit a photo",
-            "url": "https://www.singaporetech.edu.sg/postcards-from-Punggol-photo-contest-landing"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-10",
-        "title": "SIT Speaker Series: From Waste to Worth",
-        "organiser": "SIT Community Engagement Division",
-        "summary": "Join Associate Professor Mark Teo and Russell Nathan to explore food waste, food resilience and practical actions for individuals and communities. Take part in a food-preservation exercise.",
-        "when": "14 November 2026, 10am to 11.30am",
-        "where": "Lounge@Forum, Campus Heart, W1, Level 2",
-        "poster": "/newsletters/whats-happening-2026/10-original.png",
-        "preview": "/newsletters/whats-happening-2026/10-preview.webp",
-        "width": 562,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Registration form",
-            "url": "https://forms.cloud.microsoft/r/zQMBAXVnPH"
-          }
-        ]
-      }
-    ]
-  },
-  {
-    "id": "sitequests",
-    "title": "SITeQuests",
-    "entries": [
-      {
-        "id": "newsletter-11",
-        "title": "Mastering the Art of Dining",
-        "organiser": "SITeQuest, in partnership with FranklinCovey",
-        "summary": "The 7 Habits of Highly Effective People offers a framework for setting priorities, aligning personal goals, managing commitments and communicating with others. Sign up on IN4SIT using activity code 0000004686. Fee: $10.",
-        "when": "Saturday, 7 November 2026, 9am to 6pm",
-        "where": "Alumni Base Station, Block E6, Level 4",
-        "poster": "/newsletters/whats-happening-2026/11-original.png",
-        "preview": "/newsletters/whats-happening-2026/11-preview.webp",
-        "width": 720,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Open IN4SIT",
-            "url": "https://in4sit.singaporetech.edu.sg/"
-          }
-        ]
+        "height": 405,
+        "addedOn": "2026-11-19"
       }
     ]
   },
@@ -214,134 +54,50 @@
     "title": "External events",
     "entries": [
       {
-        "id": "newsletter-12",
-        "title": "Your Career, Your Say",
-        "organiser": "Inter-University Network (IUN)",
-        "summary": "A student survey about career pressure, portfolio building, competition and support. A $5 Grab gift voucher is offered while supplies last.",
-        "when": "Closes 31 October 2026; approximately 10 minutes to complete",
-        "where": "Online",
-        "poster": "/newsletters/whats-happening-2026/12-original.png",
-        "preview": "/newsletters/whats-happening-2026/12-preview.webp",
+        "id": "grandparents-day-2026",
+        "title": "Grandparents’ Day 2026 at One Punggol",
+        "organiser": "One Punggol CC",
+        "summary": "Eight mini challenges, a three-generation family challenge and eSports activities for families. Tickets are $5 per person, including refreshments. Registration ends on 21 November or when tickets are fully taken.",
+        "when": "21 November 2026, 2pm to 5pm",
+        "where": "One Punggol, Level 5, Multi-Purpose Hall",
+        "registrationCloses": "2026-11-21",
+        "endDate": "2026-11-21",
+        "actions": [
+          {
+            "label": "Tickets and registration",
+            "url": "https://www.onepa.gov.sg/events/grandparents-day-2026-one-punggol-e48686298"
+          }
+        ],
+        "poster": "/newsletters/2026-11-19/grandparents-day-2026-original.jpeg",
+        "preview": "/newsletters/2026-11-19/grandparents-day-2026-preview.webp",
         "width": 509,
         "height": 720,
-        "actions": [
-          {
-            "label": "Expired survey link",
-            "url": "https://ask.mili.eu/s/0n262vn21nbbiggd?k=gLNWPQU1ahrsdgl1Cv5oEYEPug3p5rXXu3bpFkQJ3z5W3fIrSFdTXpq1upR8rNrr&pl=0nm15fq66rdqbhhm&lang=EN&mkt=SG&uni=sit"
-          }
-        ]
+        "addedOn": "2026-11-19"
       },
       {
-        "id": "newsletter-13",
-        "title": "Shape the Future of Robotics: Robotics & You",
-        "organiser": "Infocomm Media Development Authority (IMDA)",
-        "summary": "Views on robotics, including acceptance, future applications and careers. Open to SIT undergraduate and postgraduate students.",
-        "when": "Open until 9 November; approximately 8 minutes to complete",
-        "where": "Online",
-        "poster": "/newsletters/whats-happening-2026/13-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/13-preview.webp",
-        "width": 576,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Take the survey",
-            "url": "https://go.gov.sg/student-survey-robotics"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-14",
-        "title": "SkillsFuture Festival 2026 @ North East",
-        "organiser": "SkillsFuture Festival @ North East",
-        "summary": "Career guidance, AI and robotics showcases, more than 15 employers, local businesses and a Community AI Literacy Workshop on 28 October.",
-        "when": "27 and 28 October 2026, 10am to 5pm",
-        "where": "Our Tampines Hub, Levels 1 and 2",
-        "poster": "/newsletters/whats-happening-2026/14-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/14-preview.webp",
-        "width": 576,
-        "height": 720,
+        "id": "ymun-singapore-2027",
+        "title": "Yale Model United Nations Singapore IV",
+        "organiser": "Yale student directors",
+        "summary": "Committee sessions, speaker panels, workshops and a delegate dance, with preparation support for newcomers. The organiser lists delegate eligibility as secondary school and junior college students. Regular registration closes 31 January 2027.",
+        "when": "12 to 14 March 2027",
+        "where": "OWIS Digital Campus, Punggol Digital District",
+        "registrationCloses": "2027-01-31",
+        "endDate": "2027-03-14",
         "actions": [
           {
             "label": "Registration form",
-            "url": "https://go.gov.sg/sff-ne-2026"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-15",
-        "title": "Clean & Green Quest 2026",
-        "organiser": "National Environment Agency / Clean & Green Singapore",
-        "summary": "Teams of four complete environmental and community challenges. Limited to 25 teams; prizes are sponsored by Gain City.",
-        "when": "21 November 2026, 7.30am to 11am",
-        "where": "Starts at Woodlands Galaxy Community Club, with checkpoints around Kampung Admiralty",
-        "poster": "/newsletters/whats-happening-2026/15-original.png",
-        "preview": "/newsletters/whats-happening-2026/15-preview.webp",
-        "width": 413,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Registration form",
-            "url": "https://www.cleanandgreenquest2026.com/register"
+            "url": "https://form.typeform.com/to/qGHLE4fe"
           },
           {
-            "label": "Rules and regulations",
-            "url": "https://go.gov.sg/cqgrr"
+            "label": "Conference details",
+            "url": "https://ymuns.org/"
           }
-        ]
-      },
-      {
-        "id": "newsletter-16",
-        "title": "Housing Journey Youth Panel",
-        "organiser": "Housing & Development Board (HDB)",
-        "summary": "For people aged 18 to 35. Dialogues and learning journeys about housing information, support and the flat-purchase experience.",
-        "when": "January to September 2027",
-        "where": "",
-        "poster": "/newsletters/whats-happening-2026/16-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/16-preview.webp",
-        "width": 540,
-        "height": 720,
-        "actions": [
-          {
-            "label": "Sign-up form",
-            "url": "https://go.gov.sg/hdb-hjyp-register"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-17",
-        "title": "10 Dimensions of Wellness Series",
-        "organiser": "Total Wellness Initiative Singapore with the Lim Hoon Foundation",
-        "summary": "Explore wellbeing through crafts, panels, games and other activities. Student-community tickets are $5 using the code TWISFAMILY.",
-        "when": "Seven Saturdays",
-        "where": "",
-        "poster": "/newsletters/whats-happening-2026/17-original.jpg",
-        "preview": "/newsletters/whats-happening-2026/17-preview.webp",
-        "width": 576,
-        "height": 720,
-        "actions": [
-          {
-            "label": "View workshops",
-            "url": "https://qrs.ly/10DimsWorkshops"
-          }
-        ]
-      },
-      {
-        "id": "newsletter-18",
-        "title": "17th Young Hospitality Summit (YHS) 2027",
-        "organiser": "Young Hospitality Summit, EHL Hospitality Business School",
-        "summary": "For students in the final or second-to-last year of a bachelor’s degree who can communicate in written and spoken English. Connect with hospitality professionals, develop practical skills and exchange ideas with fellow students.",
-        "when": "Summit: 15 to 17 March 2027. Online information sessions: 6 and 13 November 2026 at 9am or 4pm CET.",
-        "where": "Lausanne, Switzerland; information sessions online",
-        "poster": "/newsletters/whats-happening-2026/18-original.png",
-        "preview": "/newsletters/whats-happening-2026/18-preview.webp",
+        ],
+        "poster": "/newsletters/2026-11-19/ymun-singapore-2027-original.png",
+        "preview": "/newsletters/2026-11-19/ymun-singapore-2027-preview.webp",
         "width": 720,
-        "height": 703,
-        "actions": [
-          {
-            "label": "Information sessions",
-            "url": "https://forms.cloud.microsoft/e/8Fi4P34QfL"
-          }
-        ]
+        "height": 613,
+        "addedOn": "2026-11-19"
       }
     ]
   },
@@ -349,6 +105,39 @@
     "id": "announcements",
     "title": "Announcements",
     "entries": [
+      {
+        "id": "kin-teck-tong-sit-offer",
+        "title": "Kin Teck Tong: 15% off services",
+        "organiser": "Kin Teck Tong",
+        "summary": "SIT students and staff receive 15% off TCM services, capped at $30. Physician consultations, medication and retail products are excluded. Present the original promotion image and your SIT pass, and quote “SIT 15%” when booking.",
+        "when": "",
+        "where": "All Kin Teck Tong branches",
+        "actions": [
+          {
+            "label": "Services and appointments",
+            "url": "https://linktr.ee/kintecktong"
+          }
+        ],
+        "poster": "/newsletters/2026-11-19/kin-teck-tong-sit-offer-original.png",
+        "preview": "/newsletters/2026-11-19/kin-teck-tong-sit-offer-preview.webp",
+        "width": 331,
+        "height": 570,
+        "addedOn": "2026-11-19"
+      },
+      {
+        "id": "sushi-go-sit-offer",
+        "title": "Sushi-GO: 10% off for SIT students and staff",
+        "organiser": "Sushi-GO",
+        "summary": "Get 10% off dine-in orders at Sushi-GO, Punggol Coast Mall, from Monday to Friday, excluding public holidays.",
+        "when": "Monday to Friday, excluding public holidays",
+        "where": "Sushi-GO, Punggol Coast Mall",
+        "actions": [],
+        "poster": "/newsletters/2026-11-19/sushi-go-sit-offer-original.png",
+        "preview": "/newsletters/2026-11-19/sushi-go-sit-offer-preview.webp",
+        "width": 405,
+        "height": 720,
+        "addedOn": "2026-11-19"
+      },
       {
         "id": "newsletter-19",
         "title": "SIT Sustainability Report 2026",
@@ -365,7 +154,8 @@
             "label": "Read the report",
             "url": "https://www.singaporetech.edu.sg/sustainability-report-2026/"
           }
-        ]
+        ],
+        "addedOn": "2026-11-18"
       }
     ]
   }

@@ -180,7 +180,7 @@ export function CampusDock({
         <div class="dock-section-heading">
           <h2 id="happening-heading">What’s Happening</h2>
         </div>
-        <NewsletterCatalogue nested />
+        <NewsletterCatalogue nested now={now} />
       </section>
       <div class="dock-secondary">
         <a class="dock-coming-soon" href="/coming-soon">

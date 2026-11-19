@@ -18,7 +18,7 @@ export const pageMeta: Record<string, { title: string; description: string }> =
     "/events": {
       title: "What’s Happening",
       description:
-        "The What’s Happening newsletter catalogue, with internal and external events, SITeQuests, announcements and posters.",
+        "Current internal and external events, registration links, posters and the latest campus announcements.",
     },
     "/transport": {
       title: "Punggol transport",
