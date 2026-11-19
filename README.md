@@ -20,6 +20,7 @@ A mobile website for SIT services, academic dates and student events.
 
 - Shortcuts to IN4SIT, xSiTe, RBS, Campus Map, Student intranet, Academic calendar and ReadyTalent, with favourites on Home.
 - The current academic week and one selectable countdown for Final assessment, Trimester break or Recess week, with personal date overrides.
+- An anonymous feedback link below the home shortcuts opens Slido for comments on any topic.
 - Punggol transport shows bus estimates for Punggol Coast Interchange and official first/last MRT train times towards HarbourFront. Bus times refresh every 30 seconds; live MRT countdowns are not available.
 - What’s Happening groups the newsletter into internal events, SITeQuests, external events and announcements, with buttons for registration and other source links. Select a poster to open the original image.
 - Favourites, the countdown choice and personal dates are saved in this browser. OneSIT requires no account; school services handle their own sign-in.
@@ -44,6 +45,6 @@ Run `npm run check` for type checking, linting, logic tests and a production bui
 
 [Setup and browser tests](docs/SETUP.md) · [Architecture](docs/ARCHITECTURE.md) · [Transport data](docs/TRANSPORT.md) · [Newsletter maintenance](docs/NEWSLETTERS.md) · [Design](DESIGN.md) · [Brand](docs/BRAND.md) · [Validation](docs/VALIDATION.md)
 
-OneSIT is an open-source, student-led app piloted by a member of SIT Vanguard. Its wordmark pays homage to SIT Vanguard. Service icons are original category illustrations.
+OneSIT is an open-source, student-led app piloted by a member of SIT Vanguard. Its wordmark pays homage to SIT Vanguard. School service icons are original category illustrations. The feedback button uses [Slido's favicon](public/services/ATTRIBUTION.md).
 
 Application code and original assets use the [MIT licence](LICENSE). Third-party names and material retain their respective rights.

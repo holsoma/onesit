@@ -198,6 +198,52 @@
 .dock-secondary {
   padding-top: 0;
 }
+.dock-feedback {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 72px;
+  margin-top: 14px;
+  padding: 12px 14px;
+  background: #f7f7f8;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  transition: background-color 160ms var(--ease), border-color 160ms var(--ease);
+}
+.dock-feedback > img {
+  flex-shrink: 0;
+}
+.dock-feedback-copy {
+  display: grid;
+  gap: 2px;
+  flex: 1;
+  min-width: 0;
+}
+.dock-feedback-copy strong {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: -0.2px;
+}
+.dock-feedback-copy > span {
+  font-size: 12px;
+  color: var(--muted);
+}
+.dock-feedback > svg {
+  width: 17px;
+  height: 17px;
+  color: var(--red);
+  transition: transform 160ms var(--ease);
+}
+.dock-feedback:focus-visible {
+  background: var(--red-soft);
+}
+.dock-feedback:active {
+  background: var(--red-soft);
+  border-color: var(--red);
+}
+.dock-feedback:active > svg {
+  transform: scale(0.9);
+}
 .dock-events .event-summary {
   padding: 21px 0;
   gap: 16px;
@@ -257,6 +303,13 @@
     opacity 160ms;
 }
 @media (hover: hover) {
+  .dock-feedback:hover {
+    background: var(--red-soft);
+    border-color: #d9b4ba;
+  }
+  .dock-feedback:hover > svg {
+    transform: translate(2px, -2px);
+  }
   .dock-week:hover > span {
     transform: scale(1.5);
   }
@@ -382,6 +435,12 @@
   }
 }
 @media (prefers-reduced-motion: reduce) {
+  .dock-feedback,
+  .dock-feedback > svg {
+    transition: none;
+  }
+  .dock-feedback:hover > svg,
+  .dock-feedback:active > svg,
   .dock-week:hover > span,
   .dock-shortcut:hover > img,
   .dock-shortcut:active > img,

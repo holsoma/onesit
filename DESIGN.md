@@ -80,3 +80,38 @@ The visible week and selected countdown use Singapore calendar days. Personal ov
 ## Restraint
 
 The academic information supports the shortcuts. Do not restore the large week counter, add a second countdown or introduce a marketing heading. Keep familiar phone interactions, useful content and readable controls ahead of decorative effects.
+
+## Anonymous feedback
+
+The owner chose Home, directly below the shortcuts, for a small link to the supplied Slido event. Keep Preact, Vite, system fonts and existing CSS; this addition needs no runtime dependency or embedded form.
+
+Three component directions were considered:
+
+| Direction | Anchor and treatment | Signature, emotion and frame | Originality / fit / feasibility / portability |
+| --- | --- | --- | --- |
+| Dock note | The chosen Campus Dock gains one compact feedback row after All services. | The external-link icon moves towards its destination on hover. Calm and available; a small favicon and two lines below the dock. | 3 / 5 / 5 / 3 |
+| Campus dropbox | Campus suggestion boxes inform a wide ruled feedback strip. | A line opens on focus. Inviting; a larger slot between shortcuts and events. | 4 / 3 / 4 / 3 |
+| Utility chip | The app's existing utility controls gain a single icon and label. | Press feedback matches settings. Immediate; a small isolated chip below the dock. | 2 / 4 / 5 / 4 |
+
+Choose Dock note: it fits the requested placement and gives the anonymous purpose enough space without adding a new section heading.
+
+Idea: Make feedback as easy to reach as a campus shortcut.
+Metaphor: A note attached to the existing app dock.
+Signature: A small external-link icon moves up and right, using the current 160ms easing.
+Emotion: Easy to approach.
+Motion verb: Slot into place.
+Screenshot: Shortcuts, All services, then a single feedback row before What's Happening.
+
+Use the existing white, charcoal, grey and red palette. Keep Slido's official green favicon at 24px as the destination identifier. The row uses a 12px radius, 12px inner gap, a 15px label and 12px supporting text. The whole row is a touch target at least 72px high. Keep it still at rest and remove motion under reduced-motion preferences.
+
+```text
+[favourite shortcuts]
+All services                         8 available
+[Slido] Anonymous feedback                    ↗
+        Any topic, via Slido.
+What's Happening
+```
+
+The genericness check removed a separate feedback heading and decorative icon container. This remains a small utility within the selected Campus Dock. It opens Slido in a new tab without loading Slido code, sending a referrer or submitting responses from OneSIT. The event's composer showed an optional name field when checked on 19 November 2026; its host controls future settings.
+
+The first review prompted naming Slido in the visible supporting text. The title already states that feedback is anonymous; the second line identifies the destination without claiming a specific recipient that the event does not name.

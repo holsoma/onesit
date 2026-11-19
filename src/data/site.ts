@@ -2,6 +2,7 @@ export const site = {
   name: "OneSIT",
   url: import.meta.env.VITE_SITE_URL || "https://onesit.vercel.app",
   repository: "https://github.com/holsoma/onesit",
+  feedback: "https://app.sli.do/event/aTFUhNXvYZHENxDvqvCy8N",
   description:
     "Campus services, academic dates and student events in one place. An open-source companion for SIT students.",
   affiliation: "Not affiliated with SIT.",

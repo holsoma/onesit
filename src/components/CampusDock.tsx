@@ -1,6 +1,7 @@
 import { Icon } from "./Icon";
 import { NewsletterCatalogue } from "./NewsletterCatalogue";
 import { services } from "../data/services";
+import { site } from "../data/site";
 import { countdownNames } from "../data/calendar";
 import type { CountdownKind } from "../data/calendar";
 import {
@@ -159,6 +160,20 @@ export function CampusDock({
               </span>
             </a>
           </section>
+          <a
+            class="dock-feedback"
+            href={site.feedback}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="/services/slido.png" alt="" width="24" height="24" />
+            <span class="dock-feedback-copy">
+              <strong>Anonymous feedback</strong>
+              <span>Any topic, via Slido.</span>
+            </span>
+            <Icon name="external" />
+            <span class="sr-only">Open Slido in a new tab</span>
+          </a>
         </div>
       </div>
       <section class="dock-catalogue" aria-labelledby="happening-heading">

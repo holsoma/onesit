@@ -1,6 +1,6 @@
 # OneSIT validation
 
-Validated on 18 November 2026 against the production build.
+Validation records through 19 November 2026, using production builds.
 
 ## Functional checks
 
@@ -16,7 +16,7 @@ Validated on 18 November 2026 against the production build.
 
 Two screenshot passes cover Home and Events at 1440, 768, 390 and 320 pixels. Neither page has horizontal overflow or browser errors. Section links scroll to their headings. Keyboard activation opens the original poster in a new tab, and the focused poster has a visible outline. Reduced-motion screenshots retain the catalogue content.
 
-The final Home WCAG A/AA scan reports no violations. The static audit crawled six public routes with zero failures and zero warnings.
+The final Home WCAG A/AA scan reports no violations. The static audit crawled seven public routes with zero failures and zero warnings.
 
 The revised section bar was checked at 320, 390, 595, 768 and 1440 pixels. Labels fit without clipping, all four links work with Enter, and touch targets are at least 46px high. Hover, keyboard focus and reduced-motion states were captured and checked. Counts are hidden below 360px to preserve label space.
 
@@ -26,7 +26,7 @@ The first visual review led to dates appearing before descriptions, a two-column
 
 ## Performance
 
-- Initial JavaScript: 21.4 KiB gzip. CSS: 6.4 KiB gzip.
+- Initial JavaScript: 21.5 KiB gzip. CSS: 6.6 KiB gzip.
 - The newsletter parser remains outside the normal app download.
 - All 19 WebP previews total approximately 1.03 MiB. The first preview loads eagerly with high priority; the others load lazily. Original posters are separate files.
 - A local cold-load check with 4x CPU slowdown, 1.6 Mbps download and 150ms latency measured Home LCP at 1,608ms and Events LCP at 1,780ms. CLS was below 0.001 on Home and zero on Events.
@@ -41,3 +41,13 @@ These are local laboratory measurements, not field performance guarantees. GitHu
 - The transport chunk adds approximately 3.6 KiB gzip of JavaScript and 1.3 KiB gzip of CSS only when needed. Its CSS and module are linked in the transport page's initial HTML to avoid a delayed style change; they are not added to Home.
 - On a local cold load with 4x CPU slowdown, 1.6 Mbps download and 150ms latency, Home LCP was 1,620ms with CLS zero. Transport LCP was 1,000ms with CLS 0.030; live bus estimates appeared after 1,427ms.
 - The MRT panel shows the official timetable, not a simulated live arrival countdown. No API keys, geolocation, backend or new runtime packages were added.
+
+## Anonymous feedback, 19 November 2026
+
+- Home includes a 72px-high feedback link directly below the shortcuts. Its official Slido favicon is stored locally (1,308 bytes). No Slido code or API calls load on Home.
+- Two visual passes cover 320, 390, 768, 1440 and 1920 pixels, plus hover, press, keyboard focus and reduced motion. No overflow, page errors or WCAG A/AA violations were found.
+- Tab navigation reaches the link after the skip link and existing controls, with a visible 3px outline. Enter opens the exact supplied Slido URL in a new tab. This activation check intercepts the destination locally and does not submit feedback. The live Slido composer was separately checked and showed an optional name field.
+- The final local cold-load measurement with 4x CPU slowdown, 1.6 Mbps download and 150ms latency gave Home LCP of 1,552ms and CLS below 0.001. The static audit reports zero failures and zero warnings.
+- TypeScript, ESLint, all 19 logic tests, the production build and all 14 applicable browser tests pass. The private newsletter fixture test was skipped for this run.
+- The README Home preview was refreshed; both images retain matching 780 by 1688 source dimensions and aligned display bounds.
+- Two separate visual reviewers assessed the feedback control. The first prompted naming Slido in its visible supporting text. The final review found no blockers and scored the control 7.45/10 overall, with usability, accessibility, performance and responsive design at 8/10. This is an agent estimate, not an official Awwwards score.
